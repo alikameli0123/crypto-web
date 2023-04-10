@@ -55,3 +55,11 @@
     height: 34px;
     margin-right: 14px !important;
 }
+
+.active>p {
+    color: #FFFFFF;
+}
+
+.active>.circle {
+    border: 3px solid #FFFFFF;
+}
