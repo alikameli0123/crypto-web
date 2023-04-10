@@ -1,0 +1,54 @@
+.sidebar {
+    background: #388AEA;
+    height: 100vh;
+}
+
+.logo {
+    margin: 79px 0 44px 0 !important;
+}
+
+.sidebar_title {
+    font-family: Yekan-Bakh-medium;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 56px;
+    color: #FFFFFF;
+    margin-bottom: 91px !important;
+}
+
+.circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #9CC4F2;
+    margin-left: 36px !important;
+}
+
+.sidebarSteps {
+    color: #91C0F6;
+    margin-right: 32px !important;
+
+}
+
+.sidebar_user_information {
+    display: flex;
+    justify-content: flex-end;
+    margin: 12px 0 !important;
+}
+
+.sidebar_user_information>p {
+    font-family: 'Yekan-Bakh-medium';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 31px;
+    text-align: right;
+    color: #91C0F6;
+}
+
+.line{
+    border-right: 2px solid #FFFFFF;
+    height: 34px;
+    margin-right: 14px !important;
+}

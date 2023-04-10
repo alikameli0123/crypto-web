@@ -2,3 +2,47 @@
     margin: 0 !important;
     bottom: 0;
 }
+
+ul{
+    list-style: none;
+}
+
+@font-face {
+    font-family: 'Yekan Bakh Fat';
+    src: url('/public/fonts/YekanBakh-Fat.eot');
+}
+
+@font-face {
+    font-family: 'Yekan-Bakh-medium';
+    src: url('/public/fonts/YekanBakh-Medium.eot');
+}
+
+@font-face {
+    font-family: 'Yekan Bakh';
+    src: url('/public/fonts/YekanBakh-Bold.eot');
+}
+
+@font-face {
+    font-family: 'Yekan Bakh';
+    src: url('/public/fonts/YekanBakh-Light.eot');
+}
+
+@font-face {
+    font-family: 'Yekan Bakh';
+    src: url('/public/fonts/YekanBakh-Heavy.eot');
+}
+
+@font-face {
+    font-family: 'Yekan Bakh';
+    src: url('/public/fonts/YekanBakh-Thin.eot');
+}
+
+@font-face {
+    font-family: 'Yekan Bakh';
+    src: url('/public/fonts/YekanBakh-Regular.eot');
+}
+
+@font-face {
+    font-family: 'Yekan Bakh Hairline';
+    src: url('/public/fonts/YekanBakh-Hairline.eot'); 
+}

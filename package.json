@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "bootstrap": "^5.2.3",
     "bootstrap-rtl-v4": "^0.0.1-alpha.6",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",

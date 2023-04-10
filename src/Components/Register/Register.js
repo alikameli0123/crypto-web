@@ -5,7 +5,7 @@ const Register = () => {
     //? side bar static example navber
     //* with nested routing we can change 3step in register !
     return (
-        <div>
+        <div className={style.registerFormParrent}>
             register
         </div>
     )
