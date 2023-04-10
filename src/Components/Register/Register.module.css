@@ -1,5 +1,46 @@
 .registerFormParrent {
-    background:#FFFFFF;
-    height: 100vh;
+    background: #FFFFFF;
+    height: calc(100vh - 64px);
+    border-radius: 16px 0px 0px 16px;
+    padding: 32px;
+    position: relative;
+}
 
+.nextBtn {
+    background: #388AEA;
+    border-radius: 16px;
+    border: none !important;
+    color: #FFFFFF;
+    width: 146px;
+    height: 49px;
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+}
+
+
+.stepNumber {
+    font-family: 'Yekan Bakh FaNum';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 25px;
+    color: #388AEA;
+}
+
+.fill_text {
+    font-family: 'Yekan Bakh FaNum';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 31px;
+    color: #1E1E1E;
+}
+
+.endLine {
+    position: absolute;
+    bottom: 113px;
+    border-bottom: 1px solid #D6D6D6;
+    ;
+    width: calc(100% - 80px);
 }

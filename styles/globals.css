@@ -1,9 +1,9 @@
-*{
+* {
     margin: 0 !important;
     bottom: 0;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
@@ -44,5 +44,12 @@ ul{
 
 @font-face {
     font-family: 'Yekan Bakh Hairline';
-    src: url('/public/fonts/YekanBakh-Hairline.eot'); 
+    src: url('/public/fonts/YekanBakh-Hairline.eot');
+}
+
+.registerLayout {
+        background: #E8F4FF;
+        /* min-height: calc(100vh - 64px); */
+        height: 100%;
+        padding: 32px 32px 32px 33px;
 }

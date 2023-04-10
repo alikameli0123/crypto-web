@@ -1,6 +1,8 @@
 .sidebar {
     background: #388AEA;
-    height: 100vh;
+    height: calc(100vh - 64px);
+    border-radius: 0px 16px 16px 0px;
+
 }
 
 .logo {
@@ -8,6 +10,7 @@
 }
 
 .sidebar_title {
+    /* Todo check the font */
     font-family: Yekan-Bakh-medium;
     font-style: normal;
     font-weight: 900;
@@ -47,7 +50,7 @@
     color: #91C0F6;
 }
 
-.line{
+.line {
     border-right: 2px solid #FFFFFF;
     height: 34px;
     margin-right: 14px !important;
