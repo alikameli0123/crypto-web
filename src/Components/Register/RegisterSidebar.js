@@ -7,9 +7,9 @@ const RegisterSidebar = () => {
     const router = useRouter();
     return (
         <div className={` ${style.sidebar}`}>
-            <div className={`d-flex flex-column text-center justify-content-center`}>
+            <div className={`d-flex flex-column text-center justify-content-center align-items-center`}>
                 <div className={style.logo}>
-                    <Image src='/assets/logo.png' width={101} height={94} alt='logo' />
+                    <Image src='/assets/logo.png' width={51} height={43} alt='logo' />
                 </div>
                 <h2 className={style.sidebar_title}>ثبت نام</h2>
             </div>

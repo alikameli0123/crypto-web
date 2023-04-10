@@ -20,7 +20,7 @@
 
 
 .stepNumber {
-    font-family: 'Yekan Bakh FaNum';
+    font-family: 'Yekan Bakh Blod';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -29,7 +29,7 @@
 }
 
 .fill_text {
-    font-family: 'Yekan Bakh FaNum';
+    font-family: 'Yekan Bakh Blod' ;
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
@@ -43,4 +43,8 @@
     border-bottom: 1px solid #D6D6D6;
     ;
     width: calc(100% - 80px);
+}
+
+.children_container {
+    margin-top: 64px !important;
 }

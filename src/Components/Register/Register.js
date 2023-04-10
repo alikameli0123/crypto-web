@@ -8,7 +8,7 @@ const Register = ({ children, stepNumber, next_link }) => {
         <div className={`text-center ${style.registerFormParrent}`}>
             <h5 className={style.stepNumber}>  مرحله {stepNumber} از 3</h5>
             <h3 className={style.fill_text}>لطفا اطلاعات خود را با دقت وارد نمائید</h3>
-            <div>
+            <div className={style.children_container}>
                 {children}
             </div>
             <div className={style.endLine} ></div>

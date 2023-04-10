@@ -8,10 +8,11 @@
 .input {
     border: 1px solid #D6D6D6;
     border-radius: 51px;
-    padding: 15px 70px 20px 0;
+    padding: 19px 70px 15px 0;
     width: 582px;
     max-width: 100%;
     direction: rtl;
+    font-family: 'Yekan Bakh Medium' !important;
 }
 
 .label {
@@ -19,6 +20,8 @@
     width: fit-content;
     padding-inline: 10px;
     text-align: center;
+    font-family: 'Yekan Bakh Blod' !important;
+
 }
 
 .label_parrent {

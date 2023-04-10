@@ -2,16 +2,22 @@
     background: #388AEA;
     height: calc(100vh - 64px);
     border-radius: 0px 16px 16px 0px;
-
 }
 
 .logo {
     margin: 79px 0 44px 0 !important;
+    width: 101px;
+    height: 94px;
+    background: #EA8E38;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .sidebar_title {
-    /* Todo check the font */
-    font-family: Yekan-Bakh-medium;
+    font-family: 'Yekan Bakh Blod' !important;
     font-style: normal;
     font-weight: 900;
     font-size: 36px;
@@ -41,7 +47,7 @@
 }
 
 .sidebar_user_information>p {
-    font-family: 'Yekan-Bakh-medium';
+    font-family: 'Yekan Bakh Medium' !important;
     font-style: normal;
     font-weight: 700;
     font-size: 20px;

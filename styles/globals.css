@@ -13,9 +13,14 @@ ul {
 }
 
 @font-face {
-    font-family: 'Yekan-Bakh-medium';
-    src: url('/public/fonts/YekanBakh-Medium.eot');
+    font-family: 'Yekan Bakh Medium';
+    src: url('../public/fonts/YekanBakh-Thin.ttf');
 }
+
+@font-face {
+    font-family: 'Yekan Bakh Blod';
+    src: url('../public/fonts/YekanBakh-Bold.ttf');
+ }
 
 @font-face {
     font-family: 'Yekan Bakh';
