@@ -1,9 +1,12 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import style from "./Register.module.css";
-import { useState } from 'react';
 
-const Register = ({ children, stepNumber, next_link }) => {
+const Register = ({ children, stepNumber, next_link, getDetail, checkFill }) => {
+
+    useEffect(() => {
+        console.log(checkFill)
+    })
     return (
         <div className={`text-center ${style.registerFormParrent}`}>
             <h5 className={style.stepNumber}>  مرحله {stepNumber} از 3</h5>
@@ -12,11 +15,11 @@ const Register = ({ children, stepNumber, next_link }) => {
                 {children}
             </div>
             <div className={style.endLine} ></div>
-            <Link href={`/register/${next_link}`}>
-                <button className={` ${style.nextBtn}`}>
+                <Link href={`/register/${next_link}`} onClick={getDetail} >
+            <button className={checkFill ? style.activeBtn : style.deactiveBtn} disabled={!checkFill}>
                     مرحله بعد
-                </button>
-            </Link>
+            </button>
+                </Link>
         </div>
     )
 };
