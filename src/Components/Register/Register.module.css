@@ -17,8 +17,9 @@
     bottom: 32px;
     left: 32px;
 }
+
 .deactiveBtn {
-    background: #CECECE;    
+    background: #CECECE;
     border-radius: 16px;
     border: none !important;
     color: #FFFFFF;
@@ -31,7 +32,7 @@
 
 
 .stepNumber {
-    font-family: 'Yekan Bakh Blod';
+    font-family: 'Yekan Bakh Bold';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -40,7 +41,7 @@
 }
 
 .fill_text {
-    font-family: 'Yekan Bakh Blod' ;
+    font-family: 'Yekan Bakh Bold';
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
@@ -58,4 +59,12 @@
 
 .children_container {
     margin-top: 64px !important;
+}
+
+.prevLink {
+    text-decoration: none !important;
+    position: absolute;
+    bottom: 42px;
+    right: 32px;
+
 }

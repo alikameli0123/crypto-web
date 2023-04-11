@@ -1,0 +1,127 @@
+.input_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px !important;
+}
+
+.input {
+    border: 1px solid #D6D6D6;
+    border-radius: 51px;
+    padding: 19px 70px 15px 0;
+    width: 582px;
+    max-width: 100%;
+    direction: rtl;
+    font-family: 'Yekan Bakh Medium' !important;
+}
+
+.label {
+    background: #FFFFFF;
+    width: fit-content;
+    padding-inline: 10px;
+    text-align: center;
+    font-family: 'Yekan Bakh Bold' !important;
+
+}
+
+.label_parrent {
+    margin-bottom: -8px !important;
+    z-index: 2;
+    width: calc(582px - 66px);
+    text-align: end;
+}
+
+.input_parrent {
+    position: relative;
+}
+
+.icon {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    right: 20px;
+    border-left: 1px solid #D6D6D6;
+    padding-left: 20px;
+    height: fit-content;
+}
+
+.sendCode {
+    font-family: 'Yekan Bakh Bold' !important;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    color: #388AEA;
+    position: absolute;
+    left: 26px;
+    top: 18px;
+    cursor: pointer;
+}
+
+.sendCodeDetail {
+    display: flex;
+    background: #E8F4FF;
+    border-radius: 51px;
+    width: 579px;
+    max-width: 100%;
+    padding: 22px 28px 20px 50px;
+    
+}
+
+.sendCodeDetail>p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: right;
+    color: #000000;
+    margin-right: 23px !important;
+}
+
+.sendCodeParrent {
+    /* display: flex; */
+    text-align: -webkit-center;
+    justify-content: center;
+    font-family: 'Yekan Bakh Bold';
+}
+
+.sendCodeParrent>p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 25px;
+    color: #000000;
+    /* margin: 26px 0 16px 0 !important;  */
+}
+
+.confirmNumberBtn {
+    width: 150px;
+    height: 49px;
+    max-width: 100%;
+    background: #388AEA;
+    border-radius: 16px;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    color: #FFFFFF;
+    border: none;
+}
+.verifyCode>input{
+    width: 60px;
+    height: 60px;
+    padding: 6px;
+    margin: 0 10px 10px 10px !important;
+    background: #FFFFFF;
+    border: 1px solid #D6D6D6;
+    border-radius: 16px;
+    text-align: center;
+    font-size:large;
+}
+.confirmVerify{
+    
+}
+.confirmVerify>p{
+    margin: 16px 0 10px 0 !important;
+}

@@ -18,7 +18,7 @@ ul {
 }
 
 @font-face {
-    font-family: 'Yekan Bakh Blod';
+    font-family: 'Yekan Bakh Bold';
     src: url('../public/fonts/YekanBakh-Bold.ttf');
  }
 
@@ -58,3 +58,4 @@ ul {
         height: 100%;
         padding: 32px 32px 32px 33px;
 }
+
