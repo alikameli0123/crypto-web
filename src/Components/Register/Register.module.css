@@ -2,7 +2,7 @@
     background: #FFFFFF;
     height: calc(100vh - 64px);
     border-radius: 16px 0px 0px 16px;
-    padding: 32px;
+    padding: 32px !important;
     position: relative;
 }
 
@@ -11,11 +11,11 @@
     border-radius: 16px;
     border: none !important;
     color: #FFFFFF !important;
-    width: 146px;
-    height: 49px;
+    width: 126px;
+    height: 42px;
     position: absolute;
-    bottom: 32px;
-    left: 32px;
+    bottom: 28px;
+    left: 28px;
 }
 
 .deactiveBtn {
@@ -23,11 +23,11 @@
     border-radius: 16px;
     border: none !important;
     color: #FFFFFF;
-    width: 146px;
-    height: 49px;
+    width: 126px;
+    height: 42px;
     position: absolute;
-    bottom: 32px;
-    left: 32px;
+    bottom: 28px;
+    left: 28px;
 }
 
 
@@ -35,8 +35,7 @@
     font-family: 'Yekan Bakh Bold';
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
-    line-height: 25px;
+    font-size: 14px;
     color: #388AEA;
 }
 
@@ -44,20 +43,20 @@
     font-family: 'Yekan Bakh Bold';
     font-style: normal;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 31px;
     color: #1E1E1E;
 }
 
 .endLine {
     position: absolute;
-    bottom: 95px;
+    bottom: 80px;
     border-bottom: 1px solid #D6D6D6;
     width: calc(100% - 80px);
 }
 
 .children_container {
-    margin-top: 35px !important;
+    margin-top: 15px !important;
 }
 
 .prevLink {

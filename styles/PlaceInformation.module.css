@@ -8,8 +8,8 @@
 .input {
     border: 1px solid #D6D6D6;
     border-radius: 51px;
-    padding: 19px 70px 15px 0;
-    width: 660px;
+    padding: 10px 70px 8px 0;
+    width: 452px;
     max-width: 100%;
     direction: rtl;
     font-family: 'Yekan Bakh Medium' !important;
@@ -17,25 +17,27 @@
 
 .label {
     background: #FFFFFF;
+    border-radius: 10px;
     width: fit-content;
     padding-inline: 10px;
     text-align: center;
     font-family: 'Yekan Bakh Bold' !important;
-
+    font-weight: 700;
+    font-size: 14px;
 }
 
 .label_parrent_dropDown,
 .label_parrent_location {
     margin-bottom: -8px !important;
     z-index: 2;
-    width: calc(322px - 66px);
+    width: calc(221px - 66px);
     text-align: end;
 }
 
 .label_parrent {
     margin-bottom: -8px !important;
     z-index: 2;
-    width: calc(660px - 66px);
+    width: calc(452px - 66px);
     text-align: end;
 }
 
@@ -47,7 +49,7 @@
     display: flex;
     position: absolute;
     z-index: 2;
-    top: 20px;
+    top: 12px;
     right: 20px;
     border-left: 1px solid #D6D6D6;
     padding-left: 20px;
@@ -57,12 +59,12 @@
 .dropdownToggle {
     border: 1px solid #D6D6D6;
     border-radius: 51px;
-    width: 322px;
+    width: 221px !important;
     max-width: 100%;
-    padding: 18px 82px 17px 27px;
+    padding: 10px 70px 8px 0;
     background: #FFFFFF;
     color: #D6D6D6;
-    margin-left: 16px !important;
+    margin-left: 10px !important;
     direction: rtl;
     display: flex;
     justify-content: space-between;
@@ -77,7 +79,7 @@
 }
 
 .dropdownMenu {
-    width: 322px;
+    width: 221px;
     max-width: 100%;
     background: #D6D6D6;
     border-radius: 20px;
@@ -103,8 +105,8 @@
 .input_location {
     border: 1px solid #D6D6D6;
     border-radius: 51px;
-    padding: 19px 70px 15px 0;
-    width: 322px;
+    padding: 10px 70px 8px 0;
+    width: 221px;
     max-width: 100%;
     direction: rtl;
     font-family: 'Yekan Bakh Medium' !important;
@@ -114,9 +116,35 @@
     font-family: 'Yekan Bakh Bold';
     font-style: normal;
     font-weight: 900;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 25px;
     text-align: center;
     color: #388AEA;
     cursor: pointer;
+}
+
+@media (max-width:500px) {
+    .input {
+        width: 235px !important;
+    }
+
+    .label_parrent {
+        width: calc(290px - 66px);
+    }
+
+    .dropdownToggle {
+        width: 221px !important;
+    }
+
+    .placeDropDowns,
+    .user_location {
+        display: inline-block;
+    }
+    .dropdownToggle,.input_location {
+        width: 235px !important;
+        margin: 0 !important;
+    }
+    .input_container_location,.input_container{
+        margin: 0 0 5px 0 !important;
+    }
 }

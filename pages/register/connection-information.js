@@ -30,7 +30,7 @@ const ConnectionInformationPage = () => {
   }
 
   const sendCodeHandler = () => {
-    if (number.length === 11) {
+    if (number.length === 10) {
       setSendCode(true);
       console.log('send code');
     }

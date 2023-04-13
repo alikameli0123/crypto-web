@@ -8,8 +8,8 @@
 .input {
     border: 1px solid #D6D6D6;
     border-radius: 51px;
-    padding: 19px 70px 10px 0;
-    width: 570px;
+    padding: 10px 70px 8px 0;
+    width: 452px;
     max-width: 100%;
     direction: rtl;
     font-family: 'Yekan Bakh Medium' !important;
@@ -17,17 +17,19 @@
 
 .label {
     background: #FFFFFF;
+    border-radius: 10px;
     width: fit-content;
     padding-inline: 10px;
     text-align: center;
     font-family: 'Yekan Bakh Bold' !important;
-
+    font-weight: 700;
+    font-size: 14px;
 }
 
 .label_parrent {
     margin-bottom: -8px !important;
     z-index: 2;
-    width: calc(582px - 66px);
+    width: calc(452px - 66px);    
     text-align: end;
 }
 
@@ -39,7 +41,7 @@
     display: flex;
     position: absolute;
     z-index: 2;
-    top: 20px;
+    top: 12px;
     right: 20px;
     border-left: 1px solid #D6D6D6;
     padding-left: 20px;
@@ -64,20 +66,19 @@
     display: flex;
     background: #E8F4FF;
     border-radius: 51px;
-    width: 579px;
+    width: 452px;
     max-width: 100%;
-    padding: 22px 28px 20px 50px;
-    
+    padding: 18px 10px 16px 10px;
+
 }
 
 .sendCodeDetail>p {
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
-    /* line-height: 22px; */
+    font-size: 12px;
     text-align: right;
     color: #000000;
-    margin-right: 23px !important;
+    margin-right: 10px !important;
 }
 
 .sendCodeParrent {
@@ -91,9 +92,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
-    /* line-height: 25px; */
     color: #000000;
-    /* margin: 26px 0 16px 0 !important;  */
 }
 
 .confirmNumberBtn {
@@ -108,7 +107,8 @@
     color: #FFFFFF;
     border: none;
 }
-.verifyCode>input{
+
+.verifyCode>input {
     width: 50px;
     height: 50px;
     padding: 4px;
@@ -117,11 +117,27 @@
     border: 1px solid #D6D6D6;
     border-radius: 16px;
     text-align: center;
-    font-size:large;
+    font-size: large;
 }
-.confirmVerify{
-    
-}
-.confirmVerify>p{
+
+.confirmVerify {}
+
+.confirmVerify>p {
     margin: 16px 0 10px 0 !important;
+}
+
+@media (max-width:500px) {
+    .input {
+        width: 290px !important;
+    }
+
+    .label_parrent {
+        width: calc(290px - 66px);
+    }
+    .verifyCode>input {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        font-size: medium;
+    }
 }

@@ -5,9 +5,9 @@
 }
 
 .logo {
-    margin: 79px 0 44px 0 !important;
-    width: 101px;
-    height: 94px;
+    margin: 49px 0 24px 0 !important;
+    width: 91px;
+    height: 84px;
     background: #EA8E38;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15);
     border-radius: 32px;
@@ -20,18 +20,18 @@
     font-family: 'Yekan Bakh Bold' !important;
     font-style: normal;
     font-weight: 900;
-    font-size: 36px;
+    font-size: 32px;
     line-height: 56px;
     color: #FFFFFF;
-    margin-bottom: 91px !important;
+    margin-bottom: 59px !important;
 }
 
 .circle {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background: #9CC4F2;
-    margin-left: 36px !important;
+    margin-left: 32px !important;
 }
 
 .sidebarSteps {
@@ -50,8 +50,7 @@
     font-family: 'Yekan Bakh Medium' !important;
     font-style: normal;
     font-weight: 700;
-    font-size: 20px;
-    line-height: 31px;
+    font-size: 18px;
     text-align: right;
     color: #91C0F6;
 }

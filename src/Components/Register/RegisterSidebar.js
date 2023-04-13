@@ -9,9 +9,9 @@ const RegisterSidebar = () => {
         <div className={` ${style.sidebar}`}>
             <div className={`d-flex flex-column text-center justify-content-center align-items-center`}>
                 <div className={style.logo}>
-                    <Image src='/assets/logo.png' width={51} height={43} alt='logo' />
+                    <Image src='/assets/logo.svg' width={51} height={43} alt='logo' />
                 </div>
-                <h2 className={style.sidebar_title}>ثبت نام</h2>
+                <p className={style.sidebar_title}>ثبت نام</p>
             </div>
             <ul className={style.sidebarSteps}>
                 <li className={`${style.sidebar_user_information} ${router.asPath.includes('personal-information') && style.active}`} > <p>اطلاعات فردی</p> <div className={style.circle}></div> </li>
