@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 const HomePage = () => {
 
   useEffect(() => {
-    Router.push('/register/personal-information')
+    Router.push('/login')
   }, [])
 
   return (
