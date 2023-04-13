@@ -8,6 +8,16 @@ export default class Server {
         return res.data;
     }
 
+    static async get(subdirectoy) {
+        const res = await axios.get(this.base_url + "/" + subdirectoy, {
+          headers: {
+            token: password,
+          },
+        });
+        return res.data;
+      }
+
+
     static async register(name, email, phone, password, password_confirmation) {
         return await axios.post(`${this.base_url}/register`, {
             name, email, phone, password, password_confirmation
