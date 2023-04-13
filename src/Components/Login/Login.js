@@ -2,10 +2,21 @@ import Image from 'next/image';
 import Link from 'next/link';
 import style from './Login.module.css';
 import React, { useState } from 'react';
+import Server from './../../Api/Server';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const loginHandler=()=>{
+        Server.login(email,password).then(response=>{
+            if(response.data.status === 200){
+                console.log('dashboard');
+            }else{
+                console.log('not access')
+            }
+        }).catch(err=>console.log(err))
+    }
 
     return (
         <div className={`${style.login_container} container-fluid`}>
@@ -47,7 +58,7 @@ const Login = () => {
                             </div>
                         </form>
                     </div>
-                    <button className={style.loginBtn}>ورود به حساب</button>
+                    <button className={style.loginBtn} onClick={loginHandler}>ورود به حساب</button>
                 </div>
                 {/* Text right Bar */}
                 <div className={`col-12 col-md-6 ${style.text_bar}`}>
