@@ -13,10 +13,17 @@
     "bootstrap-rtl-v4": "^0.0.1-alpha.6",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
+    "leaflet": "^1.9.3",
+    "leaflet-geosearch": "^3.7.0",
     "moment": "^2.29.4",
     "next": "13.3.0",
     "react": "18.2.0",
+    "react-bootstrap": "^2.7.2",
     "react-countdown": "^2.3.5",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-leaflet": "^4.2.1"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.3"
   }
 }

@@ -1,0 +1,122 @@
+.input_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px !important;
+}
+
+.input {
+    border: 1px solid #D6D6D6;
+    border-radius: 51px;
+    padding: 19px 70px 15px 0;
+    width: 660px;
+    max-width: 100%;
+    direction: rtl;
+    font-family: 'Yekan Bakh Medium' !important;
+}
+
+.label {
+    background: #FFFFFF;
+    width: fit-content;
+    padding-inline: 10px;
+    text-align: center;
+    font-family: 'Yekan Bakh Bold' !important;
+
+}
+
+.label_parrent_dropDown,
+.label_parrent_location {
+    margin-bottom: -8px !important;
+    z-index: 2;
+    width: calc(322px - 66px);
+    text-align: end;
+}
+
+.label_parrent {
+    margin-bottom: -8px !important;
+    z-index: 2;
+    width: calc(660px - 66px);
+    text-align: end;
+}
+
+.input_parrent {
+    position: relative;
+}
+
+.icon {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    right: 20px;
+    border-left: 1px solid #D6D6D6;
+    padding-left: 20px;
+    height: fit-content;
+}
+
+.dropdownToggle {
+    border: 1px solid #D6D6D6;
+    border-radius: 51px;
+    width: 322px;
+    max-width: 100%;
+    padding: 18px 82px 17px 27px;
+    background: #FFFFFF;
+    color: #D6D6D6;
+    margin-left: 16px !important;
+    direction: rtl;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdownToggle:hover,
+.dropdownToggle:first-child:active {
+    background: #FFFFFF;
+    color: #D6D6D6;
+    border: 1px solid #D6D6D6;
+}
+
+.dropdownMenu {
+    width: 322px;
+    max-width: 100%;
+    background: #D6D6D6;
+    border-radius: 20px;
+    height: 300px;
+    overflow: auto;
+    background: #FFFFFF;
+}
+
+.placeDropDowns,
+.user_location {
+    display: flex;
+    justify-content: center;
+}
+
+.input_container_location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px !important;
+    margin-left: 16px !important;
+}
+
+.input_location {
+    border: 1px solid #D6D6D6;
+    border-radius: 51px;
+    padding: 19px 70px 15px 0;
+    width: 322px;
+    max-width: 100%;
+    direction: rtl;
+    font-family: 'Yekan Bakh Medium' !important;
+}
+
+.chooseOnMapText {
+    font-family: 'Yekan Bakh Bold';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    color: #388AEA;
+    cursor: pointer;
+}

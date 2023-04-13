@@ -20,7 +20,7 @@ ul {
 @font-face {
     font-family: 'Yekan Bakh Bold';
     src: url('../public/fonts/YekanBakh-Bold.ttf');
- }
+}
 
 @font-face {
     font-family: 'Yekan Bakh';
@@ -53,9 +53,32 @@ ul {
 }
 
 .registerLayout {
-        background: #E8F4FF;
-        /* min-height: calc(100vh - 64px); */
-        height: 100%;
-        padding: 32px 32px 32px 33px;
+    background: #E8F4FF;
+    /* min-height: calc(100vh - 64px); */
+    height: 100%;
+    padding: 32px 32px 32px 33px;
 }
 
+.dropdown-toggle::after {
+    content: url(../public/assets/register/downarrow.png) !important;
+    border: none !important;
+}
+
+/* Map modal */
+.modal {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-dialog {
+    width: 100% !important;
+}
+
+.leaflet-container {
+    top: 0 !important;
+    /* width: 818px !important; */
+    height: 528px !important;
+}
+
+/* Map modal */
