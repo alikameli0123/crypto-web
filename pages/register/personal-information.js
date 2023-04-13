@@ -9,17 +9,22 @@ const PersonalInformationPage = () => {
   const [fullname, setFullname] = useState('');
   const [uid, setUid] = useState('');
   const [birthday, setBirthday] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const [fill, setFill] = useState(false);
 
   useEffect(() => {
-    if (fullname.length > 0 && uid.length > 0 && birthday.length > 0) {
+    if (fullname.length > 0 && uid.length > 0 && birthday.length > 0 && password.length >= 6 && confirmPassword.length >= 6 && password === confirmPassword) {
       setFill(true);
-    } else {
-    }
+    } 
+    console.log(fullname)
   }, [fullname, uid, birthday])
 
-  const nextStep = () => {}
+  const nextStep = () => {
+    const userInfo=[fullname,password,confirmPassword]
+    localStorage.setItem('personal',JSON.stringify(userInfo))
+  }
   return (
     <>
       <Head>
@@ -47,9 +52,33 @@ const PersonalInformationPage = () => {
               <label className={style.label} for='#UID'> کد ملی </label>
             </div>
             <div className={style.input_parrent}>
-              <input className={style.input} onChange={(e) => { setUid(e.target.value) }} id='UID' placeholder='208-1235-456' />
+              <input className={style.input} type="text" onChange={(e) => { setUid(e.target.value) }} id='UID' placeholder='208-1235-456' />
               <span className={style.icon}>
                 <Image src='/assets/register/card.png' width={20} height={20} alt='UID' />
+              </span>
+            </div>
+          </div>
+           {/* Password */}
+           <div className={style.input_container}>
+            <div className={style.label_parrent}>
+              <label className={style.label} for='#password'> رمزعبور </label>
+            </div>
+            <div className={style.input_parrent}>
+              <input className={style.input} type='password' onChange={(e) => { setPassword(e.target.value) }} id='password' placeholder='******' />
+              <span className={style.icon}>
+                <Image src='/assets/register/lock.png' width={20} height={20} alt='password' />
+              </span>
+            </div>
+          </div>
+           {/* Confirm Password */}
+           <div className={style.input_container}>
+            <div className={style.label_parrent}>
+              <label className={style.label} for='#confirmPassword'> تایید رمزعبور</label>
+            </div>
+            <div className={style.input_parrent}>
+              <input className={style.input} type='password' onChange={(e) => { setConfirmPassword(e.target.value) }} id='confirmPassword' placeholder='******' />
+              <span className={style.icon}>
+                <Image src='/assets/register/lock.png' width={20} height={20} alt='confirmPassword' />
               </span>
             </div>
           </div>

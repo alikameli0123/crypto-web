@@ -24,8 +24,11 @@ const ConnectionInformationPage = () => {
     }
   }, [number, email])
 
-  const nextStep = () => { }
-  
+  const nextStep = () => { 
+    const userInfo=[number,email]
+    localStorage.setItem('connection',JSON.stringify(userInfo))
+  }
+
   const sendCodeHandler = () => {
     if (number.length === 11) {
       setSendCode(true);
@@ -40,7 +43,7 @@ const ConnectionInformationPage = () => {
     const threeValue = threeTxt.current.value;
     const fourValue = fourTxt.current.value;
 
-    console.log(firstValue+secValue+threeValue+fourValue)
+    console.log(firstValue + secValue + threeValue + fourValue)
   }
   // for focus on verify input code
   const handleFocus = (e) => {
@@ -52,8 +55,7 @@ const ConnectionInformationPage = () => {
       <Head>
         <title>personal Information</title>
       </Head>
-      <Register stepNumber='2' next_link='register/place-information' prev_link='personal-information' nextStep={nextStep} checkFill={fill} >
-
+      <Register stepNumber='2' next_link='register/place-information' email={email} number={number} prev_link='personal-information' nextStep={nextStep} checkFill={fill} >
         <form method='POST'>
           {/* Phone number */}
           <div className={style.input_container}>
@@ -62,7 +64,7 @@ const ConnectionInformationPage = () => {
             </div>
             <div className={style.input_parrent}>
               <span className={style.sendCode} onClick={sendCodeHandler}>ارسال کد</span>
-              <input className={style.input} maxLength='11' onChange={(e) => { setNumber(e.target.value) }} id='number' placeholder='09112564798' />
+              <input className={style.input} maxLength='11' onChange={(e) => { setNumber(e.target.value) }} id='number' placeholder='9112564798' />
               <span className={style.icon}>
                 <Image src='/assets/register/mobile.png' width={20} height={20} alt='number' />
               </span>

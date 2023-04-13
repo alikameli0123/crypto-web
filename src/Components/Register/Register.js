@@ -3,7 +3,7 @@ import React from 'react';
 import style from "./Register.module.css";
 import { useRouter } from 'next/router';
 
-const Register = ({ children, stepNumber, prev_link, next_link, nextStep, checkFill }) => {
+const Register = ({ children, stepNumber, prev_link, next_link, nextStep, checkFill,registerHandler}) => {
     const router = useRouter();
     return (
         <div className={`text-center ${style.registerFormParrent}`}>
@@ -13,16 +13,20 @@ const Register = ({ children, stepNumber, prev_link, next_link, nextStep, checkF
                 {children}
             </div>
             <div className={style.endLine} ></div>
-            <Link href={`/${next_link}`} onClick={nextStep} >
-                <button className={checkFill ? style.activeBtn : style.deactiveBtn} disabled={!checkFill}>
-                    {/* Todo put the arrow icon from font-awesome */}
                     {
                         router.asPath.includes('register/place-information') ?
-                            'ثبت نام' :
-                            'مرحله بعد'
+                        <button className={checkFill ? style.activeBtn : style.deactiveBtn} onClick={registerHandler} disabled={!checkFill}>
+                    {/* Todo put the arrow icon from font-awesome */}
+                       ثبت نام
+                        </button>
+            :
+             <Link href={`/${next_link}`} onClick={nextStep} >
+             <button className={checkFill ? style.activeBtn : style.deactiveBtn} disabled={!checkFill}>
+                 {/* Todo put the arrow icon from font-awesome */}
+                    مرحله بعد
+             </button>
+         </Link>
                     }
-                </button>
-            </Link>
             {
                 stepNumber != 1 &&
                 <Link href={`/register/${prev_link}`} className={style.prevLink}>

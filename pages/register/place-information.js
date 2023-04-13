@@ -5,11 +5,12 @@ import Router from 'next/router';
 import dynamic from 'next/dynamic'
 
 import Dropdown from "react-bootstrap/Dropdown";
+import { Modal } from 'react-bootstrap';
 
 import Register from '@/src/Components/Register/Register';
 import style from '../../styles/PlaceInformation.module.css';
 import Data from './../../src/Api/Data';
-import { Modal } from 'react-bootstrap';
+import Server from './../../src/Api/Server';
 
 const Map = dynamic(() => import("@/src/Components/Map"), {
   ssr: false
@@ -37,12 +38,22 @@ const PlaceInformationPage = ({ provinces, cities }) => {
 
     if (province.length > 0 && city.length > 0 && address.length > 0) {
       setFill(true);
-      console.log('true')
     }
-  },[province,city,address])
+  }, [province, city, address])
 
-  const nextStep=()=>{
-    
+  const nextStep = () => { }
+
+  const registerHandler = () => {
+    const personalData = JSON.parse(localStorage.getItem('personal'));
+    const connectionData = JSON.parse(localStorage.getItem('connection'));
+    const name = personalData[0];
+    const password = personalData[1];
+    const password_confirmation = personalData[2];
+    const email = connectionData[1];
+    const phone = connectionData[0];
+// eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTFiNTBhNjhiYzU1NmM4YjM0YWQ2MTJlNDdiNDM5NGNlZDk0NDQ2YjQzMzg1OWRkODMyODJjNDljNzNjYWU3ZTI4OTllZjdiODZjYTdkOTYiLCJpYXQiOjE2ODEzNzExNzIuODMyOTE1LCJuYmYiOjE2ODEzNzExNzIuODMyOTIsImV4cCI6MTcxMjk5MzU3Mi44MTE5NzEsInN1YiI6IjY5OSIsInNjb3BlcyI6W119.NFUzHeMiRCJtV7r0Dp6bYNtuuxLAkX3EjoXWl-tgqBHQx6AkvhUQz9jnv3FOm0XCOvRlCQO2ho4miCHxoxhark3IIpp1kox0hBaK8Xi-6uCWoHzrx36m4IR0Ctmk2WAzmyIhjtqd4x3tSlnORRmZNDPFh5jAQVFStboLto_jH5vPPkY5FxJ1MkwLdb38pVOTGrC0EklRcuPmd5ty5UEtqJKy7kMyh2QpgXRqPISw6TKc5a0tyRdarCrlBB2d0JaNNyb-KxYCgM7eWgPvV4sSo6pJ6DP7F17rlw58bHlTPNxVjC6oPyHtw2IY2kEFiraJDL97D5Lt6m3FcAVVDedOi5zN2DW0umoJ-8OtM522eORsrYW-utmctNDyQQumf7SJgcGN9mhcbAN2h2r_xEwmFGFEZ3mVHpLOR3rBq2skytFFjTFGybOWFBu4iS12s26rOSdFeLsMHYOec0-HpQVTcRrkxawXr8IDiaUbj94rJM1xxQQkM_fi2vbeuDR7uBx0ZSkdw6EdEz77i2kQgIXULUVYhe7zw8Bhtyrhs36Oxh7Fi5GH587AYwpZEOoM6LGL18XkRSCBscL8VDA_6wiJ_Yszskyt5OrlbPzB4kcus1nXaV4SiVsvEonL0e4ZHfJZmLIuikxA-7RtahxsK5Ws1IfYSTMMYEvDkQF26N5G2-8
+
+    Server.register(name, email, phone, password, password_confirmation).then(response=>{})
   }
 
   const handleClose = () => setShowModal(false);
@@ -51,7 +62,7 @@ const PlaceInformationPage = ({ provinces, cities }) => {
       <Head>
         <title>Connection Information</title>
       </Head>
-      <Register stepNumber='3' prev_link='connection-information' next_link='/login' nextStep={nextStep} checkFill={fill}>
+      <Register stepNumber='3' prev_link='connection-information' next_link='login' nextStep={nextStep} registerHandler={registerHandler} checkFill={fill}>
         <div className={style.placeDropDowns}>
           {/* city */}
           <div className={style.input_container}>
