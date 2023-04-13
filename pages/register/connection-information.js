@@ -1,10 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image';
-import Link from 'next/link';
 import React, { useState, useEffect, useRef } from 'react';
 import Register from '@/src/Components/Register/Register';
 import style from "../../styles/connection_information.module.css";
-import Countdown, { zeroPad } from "react-countdown";
+import Countdown from "react-countdown";
 
 const ConnectionInformationPage = () => {
 
@@ -25,7 +24,7 @@ const ConnectionInformationPage = () => {
     }
   }, [number, email])
 
-  const getDetail = () => { }
+  const nextStep = () => { }
   
   const sendCodeHandler = () => {
     if (number.length === 11) {
@@ -53,7 +52,7 @@ const ConnectionInformationPage = () => {
       <Head>
         <title>personal Information</title>
       </Head>
-      <Register stepNumber='2' next_link='place-information' getDetail={getDetail} checkFill={fill} >
+      <Register stepNumber='2' next_link='register/place-information' prev_link='personal-information' nextStep={nextStep} checkFill={fill} >
 
         <form method='POST'>
           {/* Phone number */}

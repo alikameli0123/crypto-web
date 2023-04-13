@@ -19,14 +19,13 @@ const PersonalInformationPage = () => {
     }
   }, [fullname, uid, birthday])
 
-  const getDetail = () => {
-  }
+  const nextStep = () => {}
   return (
     <>
       <Head>
         <title>personal Information</title>
       </Head>
-      <Register stepNumber='1' next_link='connection-information' getDetail={getDetail} checkFill={fill} >
+      <Register stepNumber='1' next_link='register/connection-information' nextStep={nextStep} checkFill={fill} >
 
         <form method='POST'>
 

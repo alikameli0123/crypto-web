@@ -11,7 +11,6 @@ import style from '../../styles/PlaceInformation.module.css';
 import Data from './../../src/Api/Data';
 import { Modal } from 'react-bootstrap';
 
-
 const Map = dynamic(() => import("@/src/Components/Map"), {
   ssr: false
 });
@@ -19,10 +18,12 @@ const Map = dynamic(() => import("@/src/Components/Map"), {
 const PlaceInformationPage = ({ provinces, cities }) => {
   const [province, setProvince] = useState('مازندران');
   const [city, setCity] = useState('ساری');
+  const [address, setAddress] = useState('');
   const [provinceId, setProvinceId] = useState(27);
   const [lat, setLat] = useState('');
   const [long, setLong] = useState('');
   const [showModal, setShowModal] = useState(false);
+  const [fill, setFill] = useState(false);
 
   useEffect(() => {
     Router.push({
@@ -34,18 +35,23 @@ const PlaceInformationPage = ({ provinces, cities }) => {
       setLong(res.coords.longitude);
     });
 
-  }, [province])
+    if (province.length > 0 && city.length > 0 && address.length > 0) {
+      setFill(true);
+      console.log('true')
+    }
+  },[province,city,address])
+
+  const nextStep=()=>{
+    
+  }
 
   const handleClose = () => setShowModal(false);
-  const handleShow = () => setShowModal(true);
-
-  console.log(lat, long);
   return (
     <>
       <Head>
         <title>Connection Information</title>
       </Head>
-      <Register stepNumber='3'>
+      <Register stepNumber='3' prev_link='connection-information' next_link='/login' nextStep={nextStep} checkFill={fill}>
         <div className={style.placeDropDowns}>
           {/* city */}
           <div className={style.input_container}>
@@ -108,7 +114,7 @@ const PlaceInformationPage = ({ provinces, cities }) => {
             <label className={style.label} for='#province'> آدرس </label>
           </div>
           <div className={style.input_parrent}>
-            <input className={style.input} onChange={(e) => { setLat(e.target.value) }} id='province' placeholder='ایران مازندران ساری' />
+            <input className={style.input} onChange={(e) => { setAddress(e.target.value) }} id='province' placeholder='ایران مازندران ساری' />
             <span className={style.icon}>
               <Image src='/assets/register/map.png' width={20} height={20} alt='province' />
             </span>
@@ -142,11 +148,8 @@ const PlaceInformationPage = ({ provinces, cities }) => {
         </div>
         <p className={style.chooseOnMapText} onClick={() => { setShowModal(true) }}>انتخاب طول و عرض جغرافیایی از روی نقشه</p>
       </Register>
-
       {/* Map */}
       <Modal show={showModal} onHide={handleClose}>
-
-
         <Modal.Header>
           <Modal.Title>Share via:</Modal.Title>
         </Modal.Header>
@@ -154,7 +157,6 @@ const PlaceInformationPage = ({ provinces, cities }) => {
           <Map lat={lat} long={long} />
         </Modal.Body>
       </Modal>
-
       {/* Map */}
 
     </>

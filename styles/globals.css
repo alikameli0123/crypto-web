@@ -80,5 +80,12 @@ ul {
     /* width: 818px !important; */
     height: 528px !important;
 }
+/*  Map modal */
 
-/* Map modal */
+/* place-information */
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
+    background-color: #FFFFFF !important;
+    color: #D6D6D6 !important;
+    border-color:none !important;
+}
+/* place-information */
