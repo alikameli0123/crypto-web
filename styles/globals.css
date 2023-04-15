@@ -89,3 +89,14 @@ ul {
     border-color:none !important;
 }
 /* place-information */
+
+/* dashboard   */
+.nav-link.active{
+    color:#FFFFFF !important;
+}
+.dashboard-container{
+    padding: 32px;
+    background: #E8F4FF;
+    min-height: 100vh;
+}
+/* dashboard   */

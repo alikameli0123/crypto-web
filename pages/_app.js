@@ -2,10 +2,12 @@ import '@/styles/globals.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { useRouter } from 'next/router'
 import RegisterSidebar from './../src/Components/Register/RegisterSidebar';
-import '../styles/globals.css'
-import { useEffect } from 'react';
+import '../styles/globals.css';
 import axios from 'axios';
 import Cookie from '@/src/Api/Cookie';
+
+import Sidebar from './../src/Components/Dashboard/Sidebar';
+import NavbarComponent from '@/src/Components/Dashboard/Navbar';
 
 axios.interceptors.request.use(
   async config => {
@@ -16,7 +18,7 @@ axios.interceptors.request.use(
     }
     return config;
   },
-  
+
   error => {
     Promise.reject(error)
   })
@@ -38,7 +40,22 @@ export default function App({ Component, pageProps }) {
             </div>
           </div>
           :
-          <Component {...pageProps} />
+          router.asPath.includes('dashboard') ?
+
+            <div className={`container-fluid dashboard-container`}>
+              <div className={`row`}>
+                <div className={`col-12 col-lg-10`}>
+                  <NavbarComponent />
+                  <Component {...pageProps} />
+                </div>
+                <div className={`d-none d-lg-flex col-2`}>
+                  <Sidebar />
+                </div>
+              </div>
+            </div>
+            :
+            <Component {...pageProps} />
+
       }
     </>
   )

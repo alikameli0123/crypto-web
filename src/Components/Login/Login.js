@@ -3,6 +3,7 @@ import Link from 'next/link';
 import style from './Login.module.css';
 import React, { useState } from 'react';
 import Server from './../../Api/Server';
+import Router from 'next/router';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -11,9 +12,7 @@ const Login = () => {
     const loginHandler=()=>{
         Server.login(email,password).then(response=>{
             if(response.data.status === 200){
-                console.log('dashboard');
-            }else{
-                console.log('not access')
+                Router.push('/dashboard')
             }
         }).catch(err=>console.log(err))
     }

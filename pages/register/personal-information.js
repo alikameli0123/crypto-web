@@ -18,7 +18,6 @@ const PersonalInformationPage = () => {
     if (fullname.length > 0 && uid.length > 0 && birthday.length > 0 && password.length >= 6 && confirmPassword.length >= 6 && password === confirmPassword) {
       setFill(true);
     } 
-    console.log(fullname)
   }, [fullname, uid, birthday])
 
   const nextStep = () => {

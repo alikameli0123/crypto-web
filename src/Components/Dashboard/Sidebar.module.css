@@ -1,0 +1,57 @@
+.sidebar_items {
+    flex-direction: column !important;
+    width: 100%;
+}
+.sidebar_items > div{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sidebar_container {
+    background: #FFFFFF;
+    height: calc(100vh - 64px);
+    border-radius: 16px;
+    padding: 16px 20px;
+}
+
+.sidebar_logo {
+    background: #EA8E38;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.sidebar_nav {
+    flex-direction: column;
+}
+
+.company_name {
+    font-family: 'Yekan Bakh Bold';
+    width: 100%;
+    font-style: bold;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    color: #1E1E1E;
+    padding: 16px 0 !important;
+    border-bottom:1px solid #D6D6D6;;
+}
+.navbar_collapse{
+    width: 100%;
+}
+.sidebar_item{
+    margin-right: 18px !important;
+}
+.nav_item{
+    padding: 15px 20px;
+}
+.disabled {
+    color: #9f9f9f !important;
+}
+.nav_link{
+    width:100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}

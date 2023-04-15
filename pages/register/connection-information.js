@@ -32,7 +32,6 @@ const ConnectionInformationPage = () => {
   const sendCodeHandler = () => {
     if (number.length === 10) {
       setSendCode(true);
-      console.log('send code');
     }
   }
 
@@ -42,8 +41,6 @@ const ConnectionInformationPage = () => {
     const secValue = secTxt.current.value;
     const threeValue = threeTxt.current.value;
     const fourValue = fourTxt.current.value;
-
-    console.log(firstValue + secValue + threeValue + fourValue)
   }
   // for focus on verify input code
   const handleFocus = (e) => {
