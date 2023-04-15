@@ -80,23 +80,52 @@ ul {
     /* width: 818px !important; */
     height: 528px !important;
 }
+
 /*  Map modal */
 
 /* place-information */
-.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
     background-color: #FFFFFF !important;
     color: #D6D6D6 !important;
-    border-color:none !important;
+    border-color: none !important;
 }
+
 /* place-information */
 
 /* dashboard   */
-.nav-link.active{
-    color:#FFFFFF !important;
+.nav-link.active {
+    color: #FFFFFF !important;
 }
-.dashboard-container{
+
+.dashboard-container {
     padding: 32px;
     background: #E8F4FF;
     min-height: 100vh;
 }
+
+.swiper-button-prev::after {
+    content: url('../public/assets/dashboard/arrowsquareleft.svg') !important;
+}
+
+.swiper-button-prev {
+    top: 80px !important;
+    left: 0 !important;
+}
+
+.swiper-button-next {
+    top: 80px !important;
+    right: 0 !important;
+}
+
+.swiper-button-next::after {
+    content: url('../public/assets/dashboard/arrowsquareright.svg') !important;
+}
+
 /* dashboard   */
+#myChart {
+    height: 100px;
+}

@@ -9,19 +9,19 @@ import Cookie from '@/src/Api/Cookie';
 import Sidebar from './../src/Components/Dashboard/Sidebar';
 import NavbarComponent from '@/src/Components/Dashboard/Navbar';
 
-axios.interceptors.request.use(
-  async config => {
-    config.headers = {
-      'Authorization': `Bearer ${Cookie.getCookie('token')}`,
-      'Accept': 'application/json',
-      'Content-Type': 'application/x-www-form-urlencoded'
-    }
-    return config;
-  },
+// axios.interceptors.request.use(
+//   async config => {
+//     config.headers = {
+//       'Authorization': `Bearer ${Cookie.getCookie('token')}`,
+//       'Accept': 'application/json',
+//       'Content-Type': 'application/x-www-form-urlencoded'
+//     }
+//     return config;
+//   },
 
-  error => {
-    Promise.reject(error)
-  })
+//   error => {
+//     Promise.reject(error)
+//   })
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()

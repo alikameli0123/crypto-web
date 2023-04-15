@@ -1,7 +1,7 @@
 import ChartistGraph from "react-chartist";
 import {
-  Card,
-  Col,
+    Card,
+    Col,
 } from "react-bootstrap";
 
 
@@ -19,25 +19,15 @@ const CircleChart = () => {
                         className="ct-chart ct-perfect-fourth"
                         id="chartPreferences"
                     >
-                        <ChartistGraph
+                     
+                    </div>
+                    <ChartistGraph
                             data={{
                                 labels: ["40%", "20%", "40%"],
                                 series: [40, 20, 40],
                             }}
                             type="Pie"
                         />
-                    </div>
-                    <div className="legend">
-                        <i className="fas fa-circle text-info"></i>
-                        Open <i className="fas fa-circle text-danger"></i>
-                        Bounce <i className="fas fa-circle text-warning"></i>
-                        Unsubscribe
-                    </div>
-                    <hr></hr>
-                    <div className="stats">
-                        <i className="far fa-clock"></i>
-                        Campaign sent 2 days ago
-                    </div>
                 </Card.Body>
             </Card>
         </Col>

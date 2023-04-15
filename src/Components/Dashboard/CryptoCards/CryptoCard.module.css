@@ -1,0 +1,56 @@
+.container {
+    margin: 18px 0 !important;
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 12px;
+    text-align: -webkit-center;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.coin_name {
+    font-family: 'Yekan Bakh Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    color: #000000;
+}
+
+.coin_detail {
+    /* display */
+}
+
+.coin_symbole {
+    font-family: 'Yekan Bakh Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: center;
+    color: #AEAEAE;
+}
+
+.market_cap_change_percentage_24h {
+    font-family: 'Yekan Bakh Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    color: #29C57A;
+}
+
+.coin_price {
+    font-family: 'Yekan Bakh Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #1E1E1E;
+}
