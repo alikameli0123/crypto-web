@@ -30,7 +30,7 @@ export default class Server {
   }
 
   static async getCoinsList() {
-    return await this.getCrypto("coins/");
+    return await this.getCrypto("coins/?per_page=10");
   }
 
   static async getChart(crypto) {

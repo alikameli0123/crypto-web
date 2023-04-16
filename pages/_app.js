@@ -5,7 +5,9 @@ import RegisterSidebar from './../src/Components/Register/RegisterSidebar';
 import '../styles/globals.css';
 import axios from 'axios';
 import Cookie from '@/src/Api/Cookie';
-
+import dynamic from 'next/dynamic'
+import React, { useEffect } from 'react';
+import Router from 'next/router';
 import Sidebar from './../src/Components/Dashboard/Sidebar';
 import NavbarComponent from '@/src/Components/Dashboard/Navbar';
 
@@ -18,13 +20,18 @@ import NavbarComponent from '@/src/Components/Dashboard/Navbar';
 //     }
 //     return config;
 //   },
-
+  
 //   error => {
 //     Promise.reject(error)
 //   })
 
 export default function App({ Component, pageProps }) {
-  const router = useRouter()
+  const router = useRouter();
+  useEffect(() => {
+    if (!Cookie.getCookie('token')) {
+      Router.push('/login');
+    }
+  }, [])
   return (
     <>
       {
@@ -40,7 +47,7 @@ export default function App({ Component, pageProps }) {
             </div>
           </div>
           :
-          router.asPath.includes('dashboard') ? 
+          router.asPath.includes('dashboard') ?
             <div className={`container-fluid dashboard-container`}>
               <div className={`row`}>
                 <div className={`col-12 col-xl-10 m-0 p-0`}>

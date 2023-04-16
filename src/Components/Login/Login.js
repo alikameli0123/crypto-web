@@ -4,6 +4,7 @@ import style from './Login.module.css';
 import React, { useState } from 'react';
 import Server from './../../Api/Server';
 import Router from 'next/router';
+import Cookie from './../../Api/Cookie';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -12,7 +13,8 @@ const Login = () => {
     const loginHandler=()=>{
         Server.login(email,password).then(response=>{
             if(response.data.status === 200){
-                Router.push('/dashboard')
+                Cookie.setCookie('token', response.data.token, 4)
+                Router.push('/dashboard/panel')
             }
         }).catch(err=>console.log(err))
     }

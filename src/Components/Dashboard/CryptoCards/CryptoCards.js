@@ -1,6 +1,5 @@
 import style from './CryptoCards.module.css';
 import React, { useState } from 'react';
-import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -10,7 +9,7 @@ import "swiper/css/pagination";
 import { Navigation } from "swiper"; 
 
 const CryptoCards = ({ coinsList }) => {
-    const crypto = coinsList.slice(0, 10).map(coin => {
+    const crypto = coinsList.map(coin => {
         return (
             <SwiperSlide className={style.slider_item} key={coin.id}>
                 <CryptoCard data={coin} />
@@ -34,7 +33,6 @@ const CryptoCards = ({ coinsList }) => {
                 }}
                 loop={true}
                 className={style.swiper}
-                Autoplay={true}
                 breakpoints={{
                     0: {
                       slidesPerView: 1,

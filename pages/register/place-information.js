@@ -58,6 +58,7 @@ const PlaceInformationPage = ({ provinces, cities }) => {
     }
 
   const handleClose = () => setShowModal(false);
+  
   return (
     <>
       <Head>

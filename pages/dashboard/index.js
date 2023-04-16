@@ -1,15 +1,14 @@
-
-import NavbarComponent from '../../src/Components/Dashboard/Navbar';
-import CircleChart from '../../src/Components/Dashboard/CircleChart';
 import style from './../../styles/Dashboard.module.css';
-import Sidebar from './../../src/Components/Dashboard/Sidebar';
+import Router from 'next/router';
+import React,{useEffect} from 'react';
 
 const DashboardPage = () => {
+    useEffect(()=>{
+        Router.push('/dashboard/panel');
+    },[])
     return (
-        <>
-            <div className={`container-fluid ${style.dashboard_container}`}>
-            </div>
-        </>
+        <div className={`container-fluid ${style.dashboard_container}`}>
+        </div>
     )
 }
 
