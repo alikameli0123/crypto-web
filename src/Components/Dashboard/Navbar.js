@@ -9,8 +9,8 @@ const NavbarComponent = () => {
         <>
             <div className={style.navbar_container}>
                 <div className={style.navbar}>
-                    <div className="container">
-                        <Navbar expand={`lg ${style.navbar_nav}`}>
+                    <div className="container-fluid">
+                        <Navbar expand={`xl ${style.navbar_nav}`}>
                             <Navbar.Toggle aria-controls="GG-Header" className={style.navbar_toggler} />
                             <div className={style.userInfo}>
                                 <span className={style.bell}>
@@ -20,7 +20,7 @@ const NavbarComponent = () => {
                                 <Image src='/assets/dashboard/user.svg' alt='user' width={47} height={47} />
                                 </div>
                             <Navbar.Collapse id="GG-Header" className={style.navbar_collapse}>
-                                <Nav className={`align-items-left d-block d-lg-none`}>
+                                <Nav className={`align-items-left d-block d-xl-none`}>
                                     {
                                         Data.getDashRoutes().map(route => (
                                             <Nav.Item key={route.path}>

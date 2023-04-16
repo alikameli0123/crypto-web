@@ -11,7 +11,7 @@
     background: #FFFFFF;
     min-height: calc(100vh - 64px);
     border-radius: 16px;
-    padding: 16px 20px;
+    padding: 16px 8px;
 }
 
 .sidebar_logo {

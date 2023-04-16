@@ -8,7 +8,6 @@ import CryptoCard from './CryptoCard';
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation } from "swiper"; 
-import LineChart from './LineChart';
 
 const CryptoCards = ({ coinsList }) => {
     const crypto = coinsList.slice(0, 10).map(coin => {
@@ -19,7 +18,7 @@ const CryptoCards = ({ coinsList }) => {
         );
     });
     return (
-        <div className={`container ${style.swiper_container}`}>
+        <div className={`container-fluid col-12 ${style.swiper_container}`}>
             <Swiper
                 slidesPerView={4} 
                 centeredSlides={false} 
@@ -35,9 +34,23 @@ const CryptoCards = ({ coinsList }) => {
                 }}
                 loop={true}
                 className={style.swiper}
+                Autoplay={true}
+                breakpoints={{
+                    0: {
+                      slidesPerView: 1,
+                    },
+                    640: {
+                      slidesPerView: 1,
+                    },
+                    768: {
+                      slidesPerView: 2,
+                    },
+                    1024: {
+                      slidesPerView: 4,
+                    },
+                  }}
             >
                 {crypto}
-                {/* <LineChart/> */}
             </Swiper>
         </div>
     )

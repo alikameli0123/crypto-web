@@ -10,11 +10,11 @@ const PanelPage = ({ coinsList,favoriteCoin }) => {
   return (
     <>
       <CryptoCards coinsList={coinsList}/>
-      <div className={`row`}>
-        <div className={`col-3`} ><FavoriteCoin favoriteCoin={favoriteCoin} /> </div>
-        <div className={`row col-9`}>
-          <div className={`col-6`}><BarChart/></div> 
-          <div className={`col-6`}><CircleChart /></div> 
+      <div className={`row `}>
+        <div className={`d-none d-xl-flex col-xl-3`} ><FavoriteCoin favoriteCoin={favoriteCoin} /> </div>
+        <div className={`row col-12 col-xl-9 justify-content-center`}>
+          <div className={`col-12 col-md-10 col-xl-6 my-2`}><BarChart/></div> 
+          <div className={`col-12 col-md-10 col-xl-6 my-2`}><CircleChart /></div> 
           <div className={`col-12`}><Indicators /></div> 
         </div>
       </div>

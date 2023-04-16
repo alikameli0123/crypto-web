@@ -125,21 +125,30 @@ ul {
     content: url('../public/assets/dashboard/arrowsquareright.svg') !important;
 }
 
-.indicator{
+.indicator {
     background: #FFFFFF;
-    border-radius:16px;
+    border-radius: 16px;
     padding: 10px;
     margin-top: 6px !important;
 }
-.indicator-image{
-    width:100%;
+
+.indicator-image {
+    width: 100%;
 }
 
-/* dashboard   */
 #myChart {
-    height: 100px;
+    height: 110px !important;
 }
-#CircleChart{
-    height: 194px !important;
-    width: 405px !important;
+
+#CircleChart {
+    height: 100% !important;
+    width: 75% !important;
 }
+
+@media (max-width:500px){
+    .dashboard-container {
+        padding:8px !important;
+    }
+}
+/* dashboard   */
+

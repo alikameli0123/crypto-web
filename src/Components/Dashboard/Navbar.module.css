@@ -17,7 +17,7 @@
 }
 
 .userInfo {
-    width: 100%;
+    width: 96%;
     display: flex;
     justify-content: flex-end;
 }
@@ -35,4 +35,20 @@
     border-radius: 50%;
     position: absolute;
     top: -3px;
+}
+
+@media (max-width:1199px) and (min-width:660px) {
+    .userInfo {
+        width: 90%;
+    }
+}
+@media (max-width:660px) and (min-width:382px) {
+    .userInfo {
+        width: 80%;
+    }
+}
+@media (max-width:382px) and (min-width:320px) {
+    .userInfo {
+        width: 70%;
+    }
 }

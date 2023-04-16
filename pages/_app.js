@@ -40,15 +40,14 @@ export default function App({ Component, pageProps }) {
             </div>
           </div>
           :
-          router.asPath.includes('dashboard') ?
-
+          router.asPath.includes('dashboard') ? 
             <div className={`container-fluid dashboard-container`}>
               <div className={`row`}>
-                <div className={`col-12 col-lg-10`}>
+                <div className={`col-12 col-xl-10 m-0 p-0`}>
                   <NavbarComponent />
                   <Component {...pageProps} />
                 </div>
-                <div className={`d-none d-lg-flex col-2`}>
+                <div className={`d-none d-xl-flex col-2`}>
                   <Sidebar />
                 </div>
               </div>

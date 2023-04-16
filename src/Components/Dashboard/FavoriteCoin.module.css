@@ -4,6 +4,7 @@
     padding: 14px;
     height:475px;
     overflow:auto;
+    width: 100%;
 }
 
 .name {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import style from "./CryptoCard.module.css";
-// import  LineChart  from '@/src/Components/Dashboard/CryptoCards/LineChart';
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
+import truncate from "../../helper.js";
 
 const LineChart = dynamic(() => import("@/src/Components/Dashboard/CryptoCards/LineChart"), {
     ssr: true
@@ -20,8 +20,9 @@ const CryptoCard = ({ data }) => {
                 </div>
                 <span className={`d-flex`}>
                     <span className={style.coin_detail}>
-                        <h4 className={style.coin_name}>{data.localization.ar}</h4>
+                        <h4 className={style.coin_name}>{truncate(data.localization.ar, 10)}</h4>
                         <h6 className={style.coin_symbole}>{data.symbol}</h6>
+
                     </span>
                     <Image src={data.image.small} alt={data.name} width={46} height={46} />
                 </span>
