@@ -2,6 +2,7 @@ import CryptoCards from './../../src/Components/Dashboard/CryptoCards/CryptoCard
 import Server from './../../src/Api/Server';
 import CircleChart from '@/src/Components/Dashboard/CircleChart';
 import LineChart from '@/src/Components/Dashboard/CryptoCards/LineChart';
+import BarChart from './../../src/Components/Dashboard/BarChart';
 
 const PanelPage = ({ coinsList }) => {
   return (
@@ -10,11 +11,8 @@ const PanelPage = ({ coinsList }) => {
       <div className={`row`}>
         <div className={`col-3`} style={{background:"gray"}}>favorite coin</div>
         <div className={`row col-9`}>
-          <div className={`col-6`} style={{background:"gray"}} >ارزش معاملات هفته گذشته</div> 
-          <div className={`col-6`}>
-          <CircleChart />
-         
-          </div> 
+          <div className={`col-6`}><BarChart/></div> 
+          <div className={`col-6`}><CircleChart /></div> 
           <div className={`col-8`}>chart andicator</div> 
         </div>
       </div>
@@ -24,7 +22,7 @@ const PanelPage = ({ coinsList }) => {
 
 export default PanelPage;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const coinsList = await Server.getCoinsList();
   return {
     props: { coinsList }
