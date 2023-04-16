@@ -125,7 +125,21 @@ ul {
     content: url('../public/assets/dashboard/arrowsquareright.svg') !important;
 }
 
+.indicator{
+    background: #FFFFFF;
+    border-radius:16px;
+    padding: 10px;
+    margin-top: 6px !important;
+}
+.indicator-image{
+    width:100%;
+}
+
 /* dashboard   */
 #myChart {
     height: 100px;
+}
+#CircleChart{
+    height: 194px !important;
+    width: 405px !important;
 }

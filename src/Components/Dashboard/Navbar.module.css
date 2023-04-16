@@ -1,32 +1,38 @@
-.navbar_container{
+.navbar_container {
     background: #FFFFFF;
-    border-radius: 16px;
-    padding:16px;
+    border-radius: 10px 16px;
+    padding: 5px 16px;
 }
-.navbar_toggler{
-    display:block !important;
+
+.navbar_toggler {
+    display: block !important;
 }
-.navbar_nav{
-    direction:rtl;
+
+.navbar_nav {
+    direction: rtl;
 }
-.navbar_collapse{
-    justify-content: flex-end;  
+
+.navbar_collapse {
+    justify-content: flex-end;
 }
-.userInfo{
+
+.userInfo {
     width: 100%;
     display: flex;
     justify-content: flex-end;
 }
-.bell{
+
+.bell {
     margin-left: 16px !important;
-    align-self:center;
-    position:relative;
+    align-self: center;
+    position: relative;
 }
-.notif{
-    width:11px;
-    height:11px;
+
+.notif {
+    width: 11px;
+    height: 11px;
     background: #29C57A;
-    border-radius:50%;
-    position:absolute;
-    top:-3px;
+    border-radius: 50%;
+    position: absolute;
+    top: -3px;
 }

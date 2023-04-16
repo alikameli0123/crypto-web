@@ -3,6 +3,7 @@ import Server from './../../src/Api/Server';
 import CircleChart from '@/src/Components/Dashboard/CircleChart';
 import LineChart from '@/src/Components/Dashboard/CryptoCards/LineChart';
 import BarChart from './../../src/Components/Dashboard/BarChart';
+import Indicators from '@/src/Components/Dashboard/Indicators';
 
 const PanelPage = ({ coinsList }) => {
   return (
@@ -13,7 +14,7 @@ const PanelPage = ({ coinsList }) => {
         <div className={`row col-9`}>
           <div className={`col-6`}><BarChart/></div> 
           <div className={`col-6`}><CircleChart /></div> 
-          <div className={`col-8`}>chart andicator</div> 
+          <div className={`col-12`}><Indicators /></div> 
         </div>
       </div>
     </>

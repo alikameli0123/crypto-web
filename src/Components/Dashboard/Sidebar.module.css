@@ -9,7 +9,7 @@
 
 .sidebar_container {
     background: #FFFFFF;
-    height: calc(100vh - 64px);
+    min-height: calc(100vh - 64px);
     border-radius: 16px;
     padding: 16px 20px;
 }
