@@ -1,0 +1,75 @@
+.container {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 14px;
+    height:475px;
+    overflow:auto;
+}
+
+.name {
+    font-family: 'Yekan Bakh Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+}
+
+.symbol {
+    font-family: 'Yekan Bakh Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 19px;
+    text-align: center;
+    color: #B3B3B3;
+}
+
+.percentage_24h {
+    font-family: 'Yekan Bakh Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #2AC479;
+}
+
+.coin {
+    justify-content: space-between;
+    padding:10px 0 ;
+}
+
+.title {
+    font-family: 'Yekan Bakh Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    color: #000000;
+}
+
+.select_duration {
+    font-family: 'Yekan Bakh Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #B4B4B4;
+    border: 1px solid #BFBFBF;
+    border-radius: 8px;
+    direction: rtl;
+    padding: 3px;
+}
+.coin_list{
+
+}
+.coin_header_detail{
+    margin:15px 0 10px 0 !important;
+}
+.image,.name{
+    margin-left:5px !important;
+}

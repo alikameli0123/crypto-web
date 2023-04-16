@@ -32,8 +32,12 @@ export default class Server {
   static async getCoinsList() {
     return await this.getCrypto("coins/");
   }
-  
-  static async getChart(crypto){
+
+  static async getChart(crypto) {
     return await this.getCrypto(`coins/${crypto}/market_chart?vs_currency=usd&days=30`)
+  }
+
+  static async getFavoriteCoin() {
+    return await this.getCrypto('coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false&locale=en')
   }
 }
