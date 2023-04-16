@@ -11,6 +11,9 @@ const Login = () => {
     const [password, setPassword] = useState('');
 
     const loginHandler=()=>{
+        // for login can use:
+        // email : a001@gmail.com
+        // password: 123456
         Server.login(email,password).then(response=>{
             if(response.data.status === 200){
                 Cookie.setCookie('token', response.data.token, 4)
