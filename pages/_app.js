@@ -10,6 +10,7 @@ import React, { useEffect } from 'react';
 import Router from 'next/router';
 import Sidebar from './../src/Components/Dashboard/Sidebar';
 import NavbarComponent from '@/src/Components/Dashboard/Navbar';
+import "react-datepicker/dist/react-datepicker.css";
 
 // axios.interceptors.request.use(
 //   async config => {
@@ -28,9 +29,9 @@ import NavbarComponent from '@/src/Components/Dashboard/Navbar';
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   useEffect(() => {
-    if (!Cookie.getCookie('token')) {
-      Router.push('/login');
-    }
+    // if (!Cookie.getCookie('token')) {
+    //   Router.push('/login');
+    // }
   }, [])
   return (
     <>
@@ -38,11 +39,11 @@ export default function App({ Component, pageProps }) {
         router.asPath.includes('register') ?
           <div className='container-fluid registerLayout'>
             <div className='row d-flex justify-content-center'>
-              <div className='col-12 col-md-9 p-0'>
-                <Component {...pageProps} />
-              </div>
               <div className='col-12 col-md-3 p-0'>
                 <RegisterSidebar />
+              </div>
+              <div className='col-12 col-md-9 p-0'>
+                <Component {...pageProps} />
               </div>
             </div>
           </div>
@@ -61,7 +62,6 @@ export default function App({ Component, pageProps }) {
             </div>
             :
             <Component {...pageProps} />
-
       }
     </>
   )

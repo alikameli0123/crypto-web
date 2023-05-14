@@ -1,9 +1,13 @@
 .registerFormParrent {
     background: #FFFFFF;
     height: calc(100vh - 64px);
-    border-radius: 16px 0px 0px 16px;
+    border-radius:  0px 16px  16px  0px;
     padding: 32px !important;
     position: relative;
+    -webkit-border-radius:  0px 16px  16px  0px;
+    -moz-border-radius:  0px 16px  16px  0px;
+    -ms-border-radius:  0px 16px  16px  0px;
+    -o-border-radius:  0px 16px  16px  0px;
 }
 
 .activeBtn {
@@ -15,7 +19,7 @@
     height: 42px;
     position: absolute;
     bottom: 28px;
-    left: 28px;
+    right: 28px;
 }
 
 .deactiveBtn {
@@ -27,7 +31,7 @@
     height: 42px;
     position: absolute;
     bottom: 28px;
-    left: 28px;
+    right: 28px;
 }
 
 
@@ -63,5 +67,5 @@
     text-decoration: none !important;
     position: absolute;
     bottom: 42px;
-    right: 32px;
+    left: 32px;
 }

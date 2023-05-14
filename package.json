@@ -1,5 +1,5 @@
 {
-  "name": "crypto-dornika",
+  "name": "crypto-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -34,8 +34,10 @@
     "react-chartist": "^0.14.4",
     "react-chartjs-2": "^5.2.0",
     "react-countdown": "^2.3.5",
+    "react-datepicker": "^4.11.0",
     "react-dom": "18.2.0",
     "react-leaflet": "^4.2.1",
+    "simple-react-validator": "^1.6.2",
     "swiper": "^9.2.2",
     "technicalindicators": "^3.1.0"
   },

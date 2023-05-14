@@ -152,3 +152,6 @@ ul {
 }
 /* dashboard   */
 
+.react-datepicker__month-container{
+    z-index:4 !important; 
+}

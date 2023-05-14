@@ -4,34 +4,54 @@ import React, { useState, useEffect, useRef } from 'react';
 import Register from '@/src/Components/Register/Register';
 import style from "../../styles/connection_information.module.css";
 import Countdown from "react-countdown";
+import Router from 'next/router';
+import SimpleReactValidator from "simple-react-validator";
 
 const ConnectionInformationPage = () => {
-
-  const [number, setNumber] = useState('');
   const [email, setEmail] = useState('');
-  const [fill, setFill] = useState(false);
   const [sendCode, setSendCode] = useState(false);
+
 
   const firstTxt = useRef();
   const secTxt = useRef();
   const threeTxt = useRef();
   const fourTxt = useRef();
 
-  useEffect(() => {
-    if (number.length > 0 && email.length > 0) {
-      setFill(true);
-    } else {
-    }
-  }, [number, email])
+  const [, forceUpdate] = useState();
 
-  const nextStep = () => { 
-    const userInfo=[number,email]
-    localStorage.setItem('connection',JSON.stringify(userInfo))
+  const validator = useRef(
+    new SimpleReactValidator({
+      messages: {
+        required: "Filling this field is mandatory",
+        min: 'The field value must not be less than the sample value',
+        email: "The email entered is not correct",
+          },
+      element: message => <div style={{ color: "red" }}>{message}</div>
+    })
+  );
+
+  const nextStep = (e) => {
+    e.preventDefault();
+    try {
+      if (validator.current.allValid()) {
+        localStorage.setItem('connection', JSON.stringify(email));
+        Router.push('/register/place-information');
+      } else {
+        validator.current.showMessages();
+        forceUpdate(1);
+      }
+    } catch (ex) {
+      console.log(ex);
+    }
   }
 
   const sendCodeHandler = () => {
-    if (number.length === 10) {
+    if (validator.current.allValid()) {
+
       setSendCode(true);
+    }else {
+      validator.current.showMessages();
+      forceUpdate(1);
     }
   }
 
@@ -50,21 +70,30 @@ const ConnectionInformationPage = () => {
   return (
     <>
       <Head>
-        <title>personal Information</title>
+        <title>Connection Information</title>
       </Head>
-      <Register stepNumber='2' next_link='register/place-information' email={email} number={number} prev_link='personal-information' nextStep={nextStep} checkFill={fill} >
+      <Register stepNumber='2' next_link='register/place-information' prev_link='personal-information' nextStep={nextStep}>
         <form method='POST'>
-          {/* Phone number */}
+          {/* Email */}
           <div className={style.input_container}>
             <div className={style.label_parrent}>
-              <label className={style.label} for='#number'> شماره همراه</label>
+              <label className={style.label} for='#email'> Email</label>
             </div>
             <div className={style.input_parrent}>
-              <span className={style.sendCode} onClick={sendCodeHandler}>ارسال کد</span>
-              <input className={style.input} maxLength='11' onChange={(e) => { setNumber(e.target.value) }} id='number' placeholder='9112564798' />
+              <span className={style.sendCode} onClick={sendCodeHandler}>verify</span>
+              <input className={style.input} disabled={sendCode && true} type='email' name='email' onChange={(e) => { 
+                setEmail(e.target.value);
+                validator.current.showMessageFor("email");
+                }} id='email' placeholder='example@gmail.com' />
               <span className={style.icon}>
-                <Image src='/assets/register/mobile.png' width={20} height={20} alt='number' />
+              <Image src='/assets/register/message.png' width={20} height={20} alt='email' />
+
               </span>
+              {validator.current.message(
+                "email",
+                email,
+                "required|email"
+              )}
             </div>
           </div>
           {/* Send Code */}
@@ -72,10 +101,12 @@ const ConnectionInformationPage = () => {
             sendCode &&
             <div className={style.sendCodeParrent}>
               <div className={style.sendCodeDetail}>
-                <p>کد تائید به شماره {number} ارسال شده است. این کد تا
-                  <Countdown date={Date.now() + 120000} daysInHours={true} />
-                  دقیقه دیگر معتبر است</p>
-                <Image src='/assets/register/clipboardtick.png' width={20} height={20} alt='clipboardtick' />
+                <p>
+                A verification code has been sent to {email}.
+                <br/>
+                This code is valid for <Countdown date={Date.now() + 120000} daysInHours={true} /> minutes
+                  </p>
+                  <Image src='/assets/register/clipboardtick.png' width={20} height={20} alt='clipboardtick' />
               </div>
               <div className={style.confirmVerify}>
                 <p>کد تائید</p>
@@ -89,18 +120,6 @@ const ConnectionInformationPage = () => {
               </div>
             </div>
           }
-          {/* Email */}
-          <div className={style.input_container}>
-            <div className={style.label_parrent}>
-              <label className={style.label} for='#email'> ایمیل </label>
-            </div>
-            <div className={style.input_parrent}>
-              <input className={style.input} type='email' onChange={(e) => { setEmail(e.target.value) }} id='email' placeholder='example@mail.com' />
-              <span className={style.icon}>
-                <Image src='/assets/register/message.png' width={20} height={20} alt='email' />
-              </span>
-            </div>
-          </div>
         </form>
       </Register>
     </>

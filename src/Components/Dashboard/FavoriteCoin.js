@@ -28,6 +28,7 @@ const FavoriteCoin = ({ favoriteCoin }) => {
 
     useEffect(() => {
         findCoinHandler();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (

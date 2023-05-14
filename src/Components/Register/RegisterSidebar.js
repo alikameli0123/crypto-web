@@ -11,14 +11,14 @@ const RegisterSidebar = () => {
                 <div className={style.logo}>
                     <Image src='/assets/logo.svg' width={51} height={43} alt='logo' />
                 </div>
-                <p className={style.sidebar_title}>ثبت نام</p>
+                <p className={style.sidebar_title}>Register</p>
             </div>
             <ul className={style.sidebarSteps}>
-                <li className={`${style.sidebar_user_information} ${router.asPath.includes('personal-information') && style.active}`} > <p>اطلاعات فردی</p> <div className={style.circle}></div> </li>
+                <li className={`${style.sidebar_user_information} ${router.asPath.includes('personal-information') && style.active}`} > <div className={style.circle}></div> <p>personal information</p>  </li>
                 <div className={style.line}></div>
-                <li className={`${style.sidebar_user_information} ${router.asPath.includes('connection-information') && style.active}`} > <p>اطلاعات ارتباطی</p> <div className={style.circle}></div> </li>
+                <li className={`${style.sidebar_user_information} ${router.asPath.includes('connection-information') && style.active}`} > <div className={style.circle}></div> <p>connection information</p>  </li>
                 <div className={style.line}></div>
-                <li className={`${style.sidebar_user_information} ${router.asPath.includes('place-information') && style.active}`} > <p>اطلاعات مکانی</p> <div className={style.circle}></div> </li>
+                <li className={`${style.sidebar_user_information} ${router.asPath.includes('place-information') && style.active}`} > <div className={style.circle}></div> <p>place information</p>  </li>
             </ul>
         </div>
     )

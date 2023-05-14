@@ -8,11 +8,11 @@
 .input {
     border: 1px solid #D6D6D6;
     border-radius: 51px;
-    padding: 10px 70px 8px 0;
+    padding: 10px 0 10px 70px;
     width: 452px;
     max-width: 100%;
-    direction: rtl;
-    font-family: 'Yekan Bakh Medium' !important;
+    /* direction: rtl; */
+    font-family: 'Yekan Bakh Bold' !important;
 }
 
 .label {
@@ -29,8 +29,8 @@
 .label_parrent {
     margin-bottom: -8px !important;
     z-index: 2;
-    width: calc(452px - 66px);
-    text-align: end;
+    width: 402px ;
+    text-align: left;
 }
 
 .input_parrent {
@@ -42,9 +42,9 @@
     position: absolute;
     z-index: 2;
     top: 12px;
-    right: 20px;
-    border-left: 1px solid #D6D6D6;
-    padding-left: 20px;
+    left: 20px;
+    border-right: 1px solid #D6D6D6;
+    padding-right: 20px;
     height: fit-content;
 }
 

@@ -7,13 +7,17 @@
 
 .text_bar {
     background: #388AEA;
-    border-radius: 0px 16px 16px 0px;
+    border-radius: 16px 0px 0px 16px;
     min-height: calc(100vh - 64px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
+    -webkit-border-radius: 16px 0px 0px 16px;
+    -moz-border-radius: 16px 0px 0px 16px;
+    -ms-border-radius: 16px 0px 0px 16px;
+    -o-border-radius: 16px 0px 0px 16px;
 }
 
 .text {
@@ -47,9 +51,13 @@
 
 .login_form {
     background: #FFFFFF;
-    border-radius: 16px 0px 0px 16px;
+    border-radius: 0 16px  16px 0;
     text-align: center;
     text-align: -webkit-center;
+    -webkit-border-radius: 0 16px  16px 0;
+    -moz-border-radius: 0 16px  16px 0;
+    -ms-border-radius: 0 16px  16px 0;
+    -o-border-radius: 0 16px  16px 0;
 }
 
 .logo {
