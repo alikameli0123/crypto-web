@@ -10,12 +10,12 @@ import SimpleReactValidator from "simple-react-validator";
 const ConnectionInformationPage = () => {
   const [email, setEmail] = useState('');
   const [sendCode, setSendCode] = useState(false);
+  const [verify,setVerify] = useState(false);
 
-
-  const firstTxt = useRef();
-  const secTxt = useRef();
-  const threeTxt = useRef();
-  const fourTxt = useRef();
+  const [firstCode,setFirstCode] = useState('');
+  const [secCode,setSecCode] = useState('');
+  const [threeCode,setThreeCode] = useState('');
+  const [fourCode,setFourCode] = useState('');
 
   const [, forceUpdate] = useState();
 
@@ -33,7 +33,7 @@ const ConnectionInformationPage = () => {
   const nextStep = (e) => {
     e.preventDefault();
     try {
-      if (validator.current.allValid()) {
+      if (validator.current.fieldValid('email')) {
         localStorage.setItem('connection', JSON.stringify(email));
         Router.push('/register/place-information');
       } else {
@@ -55,12 +55,14 @@ const ConnectionInformationPage = () => {
     }
   }
 
-  const verifyPhoneNumber = (e) => {
+  const verifyEmail = (e) => {
     e.preventDefault();
-    const firstValue = firstTxt.current.value;
-    const secValue = secTxt.current.value;
-    const threeValue = threeTxt.current.value;
-    const fourValue = fourTxt.current.value;
+    if(validator.current.allValid()){
+      setVerify(true)
+    }else {
+      validator.current.showMessages();
+      forceUpdate(1);
+    }
   }
   // for focus on verify input code
   const handleFocus = (e) => {
@@ -87,7 +89,6 @@ const ConnectionInformationPage = () => {
                 }} id='email' placeholder='example@gmail.com' />
               <span className={style.icon}>
               <Image src='/assets/register/message.png' width={20} height={20} alt='email' />
-
               </span>
               {validator.current.message(
                 "email",
@@ -101,22 +102,61 @@ const ConnectionInformationPage = () => {
             sendCode &&
             <div className={style.sendCodeParrent}>
               <div className={style.sendCodeDetail}>
+                  <Image src='/assets/register/clipboardtick.png'  width={20} height={20} alt='clipboardtick' />
                 <p>
-                A verification code has been sent to {email}.
-                <br/>
-                This code is valid for <Countdown date={Date.now() + 120000} daysInHours={true} /> minutes
-                  </p>
-                  <Image src='/assets/register/clipboardtick.png' width={20} height={20} alt='clipboardtick' />
+                  A verification code has been sent to {email}.
+                  <br/>
+                  This code is valid for <Countdown date={Date.now() + 120000} daysInHours={true} /> minutes
+                </p>
               </div>
               <div className={style.confirmVerify}>
-                <p>کد تائید</p>
+                <p>Verification code</p>
                 <div className={style.verifyCode}>
-                  <input onChange={handleFocus} ref={firstTxt} type="text" maxLength="1" autoFocus={true} />
-                  <input onChange={handleFocus} ref={secTxt} type="text" maxLength="1" />
-                  <input onChange={handleFocus} ref={threeTxt} type="text" maxLength="1" />
-                  <input onChange={handleFocus} ref={fourTxt} type="text" maxLength="1" />
+
+                  <input 
+                  onChange={(e)=>{
+                    handleFocus(e);
+                    setFirstCode(e.target.value);
+                    validator.current.showMessageFor("code1");
+                  }} name='code1' type="text" pattern="\d*" maxLength="1" autoFocus={true} />
+                    {validator.current.message(
+                    "code1",
+                    firstCode,
+                    "required"
+                  )}
+                  <input onChange={(e)=>{
+                    handleFocus(e);
+                    setSecCode(e.target.value);
+                    validator.current.showMessageFor("code2");
+                  }}  name='code2' type="text" pattern="\d*" maxLength="1" />
+                    {validator.current.message(
+                      "code2",
+                      secCode,
+                      "required"
+                    )}
+                  <input onChange={(e)=>{
+                    handleFocus(e);
+                    setThreeCode(e.target.value);
+                    validator.current.showMessageFor("code3");
+                  }} name='code3' type="text" pattern="\d*" maxLength="1" />
+                    {validator.current.message(
+                      "code3",
+                      threeCode,
+                      "required"
+                    )}
+                  <input onChange={(e)=>{
+                    handleFocus(e);
+                    setFourCode(e.target.value);
+                    validator.current.showMessageFor("code4");
+                  }} name='code4' type="text" pattern="\d*" maxLength="1" />
+                  {validator.current.message(
+                    "code4",
+                    fourCode,
+                    "required"
+                  )}
                 </div>
-                <button className={style.confirmNumberBtn} onClick={verifyPhoneNumber}>تائید شماره همراه</button>
+                <button className={style.confirmNumberBtn} onClick={verifyEmail}>Verify</button>
+               {verify &&  <p><b>Email verifyed.</b></p>}
               </div>
             </div>
           }

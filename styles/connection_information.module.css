@@ -69,16 +69,17 @@
     width: 452px;
     max-width: 100%;
     padding: 18px 10px 16px 10px;
-
+    justify-content: center;
 }
 
 .sendCodeDetail>p {
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
-    text-align: right;
+    text-align: left;
     color: #000000;
-    margin-right: 10px !important;
+    margin-left: 10px !important;
+    margin-top:5px;
 }
 
 .sendCodeParrent {
