@@ -1,12 +1,6 @@
-import Head from 'next/head'
-import Router from 'next/router';
-import { useEffect } from 'react';
+import Head from 'next/head';
 
 const HomePage = () => {
-
-  useEffect(() => {
-    Router.push('/login')
-  }, [])
 
   return (
     <>

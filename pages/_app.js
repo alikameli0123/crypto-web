@@ -1,7 +1,7 @@
 import '@/styles/globals.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { useRouter } from 'next/router'
-import RegisterSidebar from './../src/Components/Register/RegisterSidebar';
+import RegisterSidebar from '../src/Components/RegisterPanel/RegisterSidebar';
 import '../styles/globals.css';
 import axios from 'axios';
 import Cookie from '@/src/Api/Cookie';

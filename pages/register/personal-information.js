@@ -1,4 +1,4 @@
-import Register from '../../src/Components/Register/Register';
+import Register from '../../src/Components/RegisterPanel/Register';
 import Head from 'next/head'
 import Link from 'next/link';
 import SimpleReactValidator from "simple-react-validator";

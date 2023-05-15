@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image';
 import React, { useState, useEffect, useRef } from 'react';
-import Register from '@/src/Components/Register/Register';
+import Register from '@/src/Components/RegisterPanel/Register';
 import style from "../../styles/connection_information.module.css";
 import Countdown from "react-countdown";
 import Router from 'next/router';

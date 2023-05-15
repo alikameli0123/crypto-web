@@ -7,7 +7,7 @@ import SimpleReactValidator from "simple-react-validator";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Modal } from 'react-bootstrap';
 
-import Register from '@/src/Components/Register/Register';
+import Register from '@/src/Components/RegisterPanel/Register';
 import style from '../../styles/PlaceInformation.module.css';
 import Data from './../../src/Api/Data';
 import Server from './../../src/Api/Server';

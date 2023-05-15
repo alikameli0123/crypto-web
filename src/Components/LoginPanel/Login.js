@@ -2,9 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import style from './Login.module.css';
 import React, { useState } from 'react';
-import Server from './../../Api/Server';
+import Server from '../../Api/Server';
 import Router from 'next/router';
-import Cookie from './../../Api/Cookie';
+import Cookie from '../../Api/Cookie';
 
 const Login = () => {
     const [email, setEmail] = useState('');

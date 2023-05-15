@@ -1,6 +1,6 @@
-import RegisterSidebar from '@/src/Components/Register/RegisterSidebar';
+import RegisterSidebar from '@/src/Components/RegisterPanel/RegisterSidebar';
 import Head from 'next/head'
-import Register from '../../src/Components/Register/Register';
+import Register from '../../src/Components/RegisterPanel/Register';
 import style from "../../styles/registerPage.module.css";
 
 const RegisterPage = () => {

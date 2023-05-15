@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Login from './../src/Components/Login/Login';
+import Login from '../src/Components/LoginPanel/Login';
 
 const LoginPage = () => {
   return (
