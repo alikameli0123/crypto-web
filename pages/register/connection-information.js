@@ -33,8 +33,7 @@ const ConnectionInformationPage = () => {
   const nextStep = (e) => {
     e.preventDefault();
     try {
-      //! Todo chaneg to all valid and send code check just email
-      if (validator.current.fieldValid('email')) {
+      if (validator.current.allValid()) {
         localStorage.setItem('connection', JSON.stringify(email));
         Router.push('/register/place-information');
       } else {
@@ -47,8 +46,7 @@ const ConnectionInformationPage = () => {
   }
 
   const sendCodeHandler = () => {
-    if (validator.current.allValid()) {
-
+    if (validator.current.fieldValid('email')) {
       setSendCode(true);
     } else {
       validator.current.showMessages();
@@ -112,50 +110,34 @@ const ConnectionInformationPage = () => {
               </div>
               <div className={style.confirmVerify}>
                 <p>Verification code</p>
-                <div className={style.verifyCode}>
-
+                <div className={style.verifyCode} name='verify'>
                   <input
                     onChange={(e) => {
                       handleFocus(e);
                       setFirstCode(e.target.value);
                       validator.current.showMessageFor("code1");
                     }} name='code1' type="text" pattern="\d*" maxLength="1" autoFocus={true} />
-                  {validator.current.message(
-                    "code1",
-                    firstCode,
-                    "required"
-                  )}
                   <input onChange={(e) => {
                     handleFocus(e);
                     setSecCode(e.target.value);
                     validator.current.showMessageFor("code2");
                   }} name='code2' type="text" pattern="\d*" maxLength="1" />
-                  {validator.current.message(
-                    "code2",
-                    secCode,
-                    "required"
-                  )}
                   <input onChange={(e) => {
                     handleFocus(e);
                     setThreeCode(e.target.value);
                     validator.current.showMessageFor("code3");
                   }} name='code3' type="text" pattern="\d*" maxLength="1" />
-                  {validator.current.message(
-                    "code3",
-                    threeCode,
-                    "required"
-                  )}
                   <input onChange={(e) => {
                     handleFocus(e);
                     setFourCode(e.target.value);
                     validator.current.showMessageFor("code4");
                   }} name='code4' type="text" pattern="\d*" maxLength="1" />
+                </div>
                   {validator.current.message(
-                    "code4",
-                    fourCode,
+                   "verify" ,
+                    fourCode && firstCode && secCode && threeCode,
                     "required"
                   )}
-                </div>
                 <button className={style.confirmNumberBtn} onClick={verifyEmail}>Verify</button>
                 {verify && <p><b>Email verifyed.</b></p>}
               </div>
