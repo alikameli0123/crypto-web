@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import Router from 'next/router';
 import dynamic from 'next/dynamic'
-
+import SimpleReactValidator from "simple-react-validator";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Modal } from 'react-bootstrap';
 
@@ -17,9 +17,8 @@ const Map = dynamic(() => import("@/src/Components/Map"), {
   ssr: false
 });
 
-const PlaceInformationPage = ({ provinces, cities }) => {
-  const [province, setProvince] = useState('مازندران');
-  const [city, setCity] = useState('ساری');
+const PlaceInformationPage = ({ countries }) => {
+  const [country, setCountry] = useState('select country');
   const [address, setAddress] = useState('');
   const [provinceId, setProvinceId] = useState(27);
   const [lat, setLat] = useState('');
@@ -27,24 +26,29 @@ const PlaceInformationPage = ({ provinces, cities }) => {
   const [showModal, setShowModal] = useState(false);
   const [fill, setFill] = useState(false);
 
-  useEffect(() => {
-    Router.push({
-      query: { p_id: provinceId },
+  const [, forceUpdate] = useState();
+
+  const validator = useRef(
+    new SimpleReactValidator({
+      messages: {
+        required: "Filling this field is mandatory",
+        min: 'The field value must not be less than the sample value',
+        email: "The email entered is not correct",
+        not_in : "please select your country"
+      },
+      element: message => <div style={{ color: "red" }}>{message}</div>
     })
+  );
+  // navigator.geolocation.getCurrentPosition((res) => {
+  //   setLat(res.coords.latitude);
+  //   setLong(res.coords.longitude);
+  // });
 
-    navigator.geolocation.getCurrentPosition((res) => {
-      setLat(res.coords.latitude);
-      setLong(res.coords.longitude);
-    });
+  const nextStep = (e) => {}
 
-    if (province.length > 0 && city.length > 0 && address.length > 0) {
-      setFill(true);
-    }
-  }, [province, city, address])
+  const registerHandler = (e) => {
+    e.preventDefault();
 
-  const nextStep = () => { }
-
-  const registerHandler = () => {
     const personalData = JSON.parse(localStorage.getItem('personal'));
     const connectionData = JSON.parse(localStorage.getItem('connection'));
     const name = personalData[0];
@@ -53,118 +57,99 @@ const PlaceInformationPage = ({ provinces, cities }) => {
     const email = connectionData[1];
     const phone = connectionData[0];
 
-    Server.register(name, email, phone, password, password_confirmation).then(response =>
-      Cookie.setCookie('token', response.data.token, 1))
+    try {
+      if (validator.current.allValid()) {
+        // localStorage.setItem('place', JSON.stringify(email));
+        // Router.push('/register/place-information');
+        alert('true')
+      } else {
+        validator.current.showMessages();
+        forceUpdate(1);
+      }
+    } catch (ex) {
+      console.log(ex);
     }
 
+    // Server.register(name, email, phone, password, password_confirmation).then(response =>
+    //   Cookie.setCookie('token', response.data.token, 1))
+  }
+
   const handleClose = () => setShowModal(false);
-  
+
   return (
     <>
       <Head>
-        <title>Connection Information</title>
+        <title>Place Information</title>
       </Head>
       <Register stepNumber='3' prev_link='connection-information' next_link='login' nextStep={nextStep} registerHandler={registerHandler} checkFill={fill}>
-        <div className={style.placeDropDowns}>
-          {/* city */}
+        <form method='POST'>
+          {/* country */}
           <div className={style.input_container}>
-            <div className={style.label_parrent_dropDown}>
-              <label className={style.label} for='#province'> شهر </label>
+            <div className={style.label_parrent}>
+              <label className={style.label} for='#country'> Country</label>
             </div>
             <div className={style.input_parrent}>
-              <Dropdown className={style.dropdown}>
-                <Dropdown.Toggle className={style.dropdownToggle} id="dropdown-basic">
-                  {city}
+            <span className={style.icon}>
+              <Image src='/assets/register/location.png' width={20} height={20} alt='country' />
+              </span>
+            <Dropdown className={style.dropdown}>
+                <Dropdown.Toggle className={style.dropdown_toggle} id="dropdown-basic">
+                  {country}
                 </Dropdown.Toggle>
                 <Dropdown.Menu className={style.dropdownMenu}>
-                  {cities.map((c) => (
+                  {countries.map((c) => (
                     <Dropdown.Item
-                      className={style.province}
-                      key={c.id}
-                      onClick={() => setCity(c.name)}
+                      className={style.country}
+                      key={c.code}
+                      name='country'
+                      onClick={() => { 
+                        setCountry(c.name);
+                      }}
+                      onChange={()=>{
+                        validator.current.showMessageFor("country");
+                      }}
                     >
                       {c.name}
                     </Dropdown.Item>
                   ))}
                 </Dropdown.Menu>
               </Dropdown>
-              <span className={style.icon}>
-                <Image src='/assets/register/location.png' width={20} height={20} alt='province' />
-              </span>
+              
+              {validator.current.message(
+                "country",
+                country,
+                `required|not_in:select country`
+              )}
             </div>
           </div>
-          {/* Province */}
+          {/* Address */}
           <div className={style.input_container}>
-            <div className={style.label_parrent_dropDown}>
-              <label className={style.label} for='#province'> استان </label>
+            <div className={style.label_parrent}>
+              <label className={style.label} for='#address'> Address</label>
             </div>
             <div className={style.input_parrent}>
-              <Dropdown className={style.dropdown}>
-                <Dropdown.Toggle className={style.dropdownToggle} id="dropdown-basic">
-                  {province}
-                </Dropdown.Toggle>
-                <Dropdown.Menu className={style.dropdownMenu}>
-                  {provinces.map((p) => (
-                    <Dropdown.Item
-                      className={style.province}
-                      key={p.id}
-                      onClick={() => { setProvince(p.name); setProvinceId(p.id) }}
-                    >
-                      {p.name}
-                    </Dropdown.Item>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown>
+              <input className={style.input} type='text' name='address' 
+              onChange={(e) => {
+                setAddress(e.target.value);
+                validator.current.showMessageFor("address");
+              }} id='address' placeholder='address' />
               <span className={style.icon}>
-                <Image src='/assets/register/location.png' width={20} height={20} alt='province' />
+                <Image src='/assets/register/message.png' width={20} height={20} alt='email' />
               </span>
+              {validator.current.message(
+                "address",
+                address,
+                "required|min:10"
+              )}
             </div>
           </div>
-        </div>
-        {/* Address */}
-        <div className={style.input_container}>
-          <div className={style.label_parrent}>
-            <label className={style.label} for='#province'> آدرس </label>
-          </div>
-          <div className={style.input_parrent}>
-            <input className={style.input} onChange={(e) => { setAddress(e.target.value) }} id='province' placeholder='ایران مازندران ساری' />
-            <span className={style.icon}>
-              <Image src='/assets/register/map.png' width={20} height={20} alt='province' />
-            </span>
-          </div>
-        </div>
-        <div className={style.user_location}>
-          {/* long */}
-          <div className={style.input_container_location}>
-            <div className={style.label_parrent_location}>
-              <label className={style.label} for='#province'> عرض جغرافیایی </label>
-            </div>
-            <div className={style.input_parrent}>
-              <input className={style.input_location} onChange={(e) => { setLong(e.target.value) }} id='province' placeholder={long} />
-              <span className={style.icon}>
-                <Image src='/assets/register/location.png' width={20} height={20} alt='province' />
-              </span>
-            </div>
-          </div>
-          {/* lat */}
-          <div className={style.input_container_location}>
-            <div className={style.label_parrent_location}>
-              <label className={style.label} for='#province'> طول جغرافیایی </label>
-            </div>
-            <div className={style.input_parrent}>
-              <input className={style.input_location} onChange={(e) => { setLat(e.target.value) }} id='province' placeholder={lat} />
-              <span className={style.icon}>
-                <Image src='/assets/register/location.png' width={20} height={20} alt='province' />
-              </span>
-            </div>
-          </div>
-        </div>
-        <p className={style.chooseOnMapText} onClick={() => { setShowModal(true) }}>انتخاب طول و عرض جغرافیایی از روی نقشه</p>
+        </form>
+        <p className={style.chooseOnMapText} onClick={() => { setShowModal(true) }}>choose lat & long from the map</p>
       </Register>
       {/* Map */}
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header>
-          <Modal.Title>Share via:</Modal.Title>
+          <Modal.Title>Location:</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Map lat={lat} long={long} />
@@ -178,11 +163,10 @@ const PlaceInformationPage = ({ provinces, cities }) => {
 
 export default PlaceInformationPage;
 
-export function getServerSideProps({ query }) {
-  const provinces = Data.getProvince();
-  const cities = Data.getCities().filter(c => c.province_id == query.p_id);
+export function getServerSideProps() {
+  const countries = Data.getCountires();
   return {
-    props: { provinces, cities }
+    props: { countries }
   };
 
 }
