@@ -145,6 +145,7 @@ const PlaceInformationPage = ({ countries }) => {
           </div>
         </form>
         <p className={style.chooseOnMapText} onClick={() => { setShowModal(true) }}>choose lat & long from the map</p>
+          <Map lat={lat} long={long} />
       </Register>
       {/* Map */}
       <Modal show={showModal} onHide={handleClose}>
@@ -152,7 +153,6 @@ const PlaceInformationPage = ({ countries }) => {
           <Modal.Title>Location:</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Map lat={lat} long={long} />
         </Modal.Body>
       </Modal>
       {/* Map */}
