@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Server from "./../src/Api/Server";
-import NavbarIndex from "@/src/Components/HomePanel/Navbar";
 import Coins from "@/src/Components/HomePanel/Coins";
 
 const HomePage = ({ coins }) => {
@@ -9,7 +8,6 @@ const HomePage = ({ coins }) => {
       <Head>
         <title>Home</title>
       </Head>
-      <NavbarIndex />
       <Coins coins={coins} />
     </>
   );

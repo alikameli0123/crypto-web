@@ -1,9 +1,21 @@
-import React from "react";
+import React,{useState} from "react";
 import style from "./Coins.module.css";
 import Image from "next/image";
+import NavbarIndex from "./Navbar";
 
 const Coins = ({ coins }) => {
+  const [search, setSearch] = useState("");
+
+  const searchHandler = (event) => {
+    setSearch(event.target.value);
+  };
+  const searchedCoins = coins.filter((coin) =>
+    coin.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
+    <>
+    <NavbarIndex search={search} searchHandler={searchHandler} />
     <div class="table-responsive my-5 px-4">
       <table class="table table-sm">
         <thead className={style.table_head}>
@@ -20,7 +32,7 @@ const Coins = ({ coins }) => {
           </tr>
         </thead>
         <tbody>
-          {coins.map((coin, index) => (
+          {searchedCoins.map((coin, index) => (
             <tr className={style.table_row} key={index}>
               <th>{index + 1}</th>
               <td className={`d-flex p-3 justify-content-evenly`}>
@@ -29,7 +41,7 @@ const Coins = ({ coins }) => {
                   alt={coin.name}
                   width={32}
                   height={32}
-                />
+                  />
                 <p style={{ width: "80px" }}>{coin.name}</p>
                 <span className={style.symbol}>
                   {coin.symbol.toUpperCase()}
@@ -42,10 +54,10 @@ const Coins = ({ coins }) => {
                 <span
                   className={
                     coin.market_data.price_change_percentage_24h > 0
-                      ? style.up_color
-                      : style.down_color
+                    ? style.up_color
+                    : style.down_color
                   }
-                >
+                  >
                   {coin.market_data.price_change_percentage_24h}%
                 </span>
               </td>
@@ -53,10 +65,10 @@ const Coins = ({ coins }) => {
                 <span
                   className={
                     coin.market_data.price_change_percentage_7d > 0
-                      ? style.up_color
-                      : style.down_color
+                    ? style.up_color
+                    : style.down_color
                   }
-                >
+                  >
                   {coin.market_data.price_change_percentage_7d}%
                 </span>
               </td>
@@ -64,10 +76,10 @@ const Coins = ({ coins }) => {
                 <span
                   className={
                     coin.market_data.price_change_percentage_30d > 0
-                      ? style.up_color
-                      : style.down_color
+                    ? style.up_color
+                    : style.down_color
                   }
-                >
+                  >
                   {coin.market_data.price_change_percentage_30d}%
                 </span>
               </td>
@@ -81,6 +93,7 @@ const Coins = ({ coins }) => {
         </tbody>
       </table>
     </div>
+          </>
   );
 };
 
