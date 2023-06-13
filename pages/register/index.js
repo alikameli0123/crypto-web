@@ -4,7 +4,7 @@ import Router  from 'next/router';
 
 const RegisterPage = () => {
   useEffect(()=>{
-    Router.push('/register/personal-information')
+    Router.replace('/register/personal-information')
   },[])
   return (
     <>

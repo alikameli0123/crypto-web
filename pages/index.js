@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Header from "./../src/Components/HomePanel/Header";
 import Server from "./../src/Api/Server";
 import NavbarIndex from "@/src/Components/HomePanel/Navbar";
+import Coins from "@/src/Components/HomePanel/Coins";
 
 const HomePage = ({ coins }) => {
   return (
@@ -10,12 +10,13 @@ const HomePage = ({ coins }) => {
         <title>Home</title>
       </Head>
       <NavbarIndex />
-      <Header coins={coins} />
+      <Coins coins={coins} />
     </>
   );
 };
 
 export default HomePage;
+
 
 export async function getServerSideProps() {
   const coins = await Server.getCoins();
