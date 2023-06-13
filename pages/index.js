@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Server from "./../src/Api/Server";
 import Coins from "@/src/Components/HomePanel/Coins";
+import Footer from "@/src/Components/HomePanel/Footer";
 
 const HomePage = ({ coins }) => {
   return (
@@ -9,6 +10,7 @@ const HomePage = ({ coins }) => {
         <title>Home</title>
       </Head>
       <Coins coins={coins} />
+      <Footer />
     </>
   );
 };
