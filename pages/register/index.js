@@ -1,9 +1,11 @@
-import RegisterSidebar from '@/src/Components/RegisterPanel/RegisterSidebar';
-import Head from 'next/head'
-import Register from '../../src/Components/RegisterPanel/Register';
-import style from "../../styles/registerPage.module.css";
+import Head from 'next/head';
+import { useEffect } from 'react';
+import Router  from 'next/router';
 
 const RegisterPage = () => {
+  useEffect(()=>{
+    Router.push('/register/personal-information')
+  },[])
   return (
     <>
       <Head>
