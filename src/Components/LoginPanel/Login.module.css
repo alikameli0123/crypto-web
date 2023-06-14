@@ -1,200 +1,221 @@
 .login_container {
-    background: #E8F4FF;
-    height: 100%;
-    min-height: 100vh;
-    padding: 32px 32px 32px 33px;
+  background: #e8f4ff;
+  height: 100%;
+  min-height: 100vh;
+  padding: 32px 32px 32px 33px;
 }
 
 .text_bar {
-    background: #388AEA;
-    border-radius: 16px 0px 0px 16px;
-    min-height: calc(100vh - 64px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    -webkit-border-radius: 16px 0px 0px 16px;
-    -moz-border-radius: 16px 0px 0px 16px;
-    -ms-border-radius: 16px 0px 0px 16px;
-    -o-border-radius: 16px 0px 0px 16px;
+  background: #388aea;
+  border-radius: 16px 0px 0px 16px;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  -webkit-border-radius: 16px 0px 0px 16px;
+  -moz-border-radius: 16px 0px 0px 16px;
+  -ms-border-radius: 16px 0px 0px 16px;
+  -o-border-radius: 16px 0px 0px 16px;
 }
 
 .text {
-    font-family: 'Yekan Bakh Bold';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 36px;
-    line-height: 56px;
-    color: #FFFFFF;
-    position: absolute;
-    top: 61px;
+  font-family: "Yekan Bakh Bold";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 56px;
+  color: #ffffff;
+  position: absolute;
+  top: 61px;
 }
 
 .sub_text {
-    font-family: 'Yekan Bakh Bold';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 31px;
-    text-align: center;
-    color: #FFFFFF;
-    width: 324px;
-    position: absolute;
-    top: 127px;
+  font-family: "Yekan Bakh Bold";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 31px;
+  text-align: center;
+  color: #ffffff;
+  width: 324px;
+  position: absolute;
+  top: 160px;
 }
 
 .login_image {
-    position: absolute;
-    bottom: 68px;
+  position: absolute;
+  bottom: 20px;
 }
 
 .login_form {
-    background: #FFFFFF;
-    border-radius: 0 16px  16px 0;
-    text-align: center;
-    text-align: -webkit-center;
-    -webkit-border-radius: 0 16px  16px 0;
-    -moz-border-radius: 0 16px  16px 0;
-    -ms-border-radius: 0 16px  16px 0;
-    -o-border-radius: 0 16px  16px 0;
+  background: #ffffff;
+  border-radius: 0 16px 16px 0;
+  text-align: center;
+  text-align: -webkit-center;
+  -webkit-border-radius: 0 16px 16px 0;
+  -moz-border-radius: 0 16px 16px 0;
+  -ms-border-radius: 0 16px 16px 0;
+  -o-border-radius: 0 16px 16px 0;
 }
 
 .logo {
-    width: 72px;
-    height: 63px;
-    background: #EA8E38;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15);
-    border-radius: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 63px 0 50px 0 !important;
+  width: 72px;
+  height: 63px;
+  background: #ea8e38;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 63px 0 50px 0 !important;
+  color: white;
+  text-decoration: none;
 }
 
 .form_title {
-    margin-bottom: 60px !important;
+  margin-bottom: 60px !important;
 }
 
-.form_title>h1 {
-    font-family: 'Yekan Bakh Bold';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 40px;
-    line-height: 62px;
-    color: #000000;
+.form_title > h1 {
+  font-family: "Yekan Bakh Bold";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 62px;
+  color: #000000;
 }
 
-.form_title>a {
-    font-family: 'Yekan Bakh Bold';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 31px;
-    color: #388AEA;
-    text-decoration: none !important;
+.form_title > a {
+  font-family: "Yekan Bakh Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 31px;
+  color: #388aea;
+  text-decoration: none !important;
 }
 
 .input_container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 5px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px !important;
 }
 
 .input {
-    border: 1px solid #D6D6D6;
-    border-radius: 51px;
-    padding: 10px 70px 8px 0;
-    width: 452px;
-    max-width: 100%;
-    direction: rtl;
-    font-family: 'Yekan Bakh Medium' !important;
+  border: 1px solid #d6d6d6;
+  border-radius: 51px;
+  padding: 10px 70px 8px 0;
+  width: 452px;
+  max-width: 100%;
+  direction: rtl;
+  font-family: "Yekan Bakh Medium" !important;
 }
 
 .label {
-    background: #FFFFFF;
-    border-radius: 10px;
-    width: fit-content;
-    padding-inline: 10px;
-    text-align: center;
-    font-family: 'Yekan Bakh Bold' !important;
-    font-weight: 700;
-    font-size: 14px;
+  background: #ffffff;
+  border-radius: 10px;
+  width: fit-content;
+  padding-inline: 10px;
+  text-align: center;
+  font-family: "Yekan Bakh Bold" !important;
+  font-weight: 700;
+  font-size: 14px;
 }
 
 .label_parrent {
-    margin-bottom: -8px !important;
-    z-index: 2;
-    width: calc(452px - 66px);
-    text-align: end;
+  margin-bottom: -8px !important;
+  z-index: 2;
+  width: calc(452px - 66px);
+  text-align: end;
 }
 
 .input_parrent {
-    position: relative;
+  position: relative;
 }
 
 .icon {
-    display: flex;
-    position: absolute;
-    z-index: 2;
-    top: 12px;
-    right: 20px;
-    border-left: 1px solid #D6D6D6;
-    padding-left: 20px;
-    height: fit-content;
+  display: flex;
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  right: 20px;
+  border-left: 1px solid #d6d6d6;
+  padding-left: 20px;
+  height: fit-content;
 }
 
 .loginBtn {
-    background: #388AEA;
-    border-radius: 16px;
-    color: white;
-    border: none !important;
-    padding: 12px 24px;
-    margin-top: 48px !important;
-    margin-bottom: 20px !important;
+  background: #388aea;
+  border-radius: 16px;
+  color: white;
+  border: none !important;
+  padding: 12px 24px;
+  margin-top: 48px !important;
+  margin-bottom: 20px !important;
 }
 
-@media (max-width:992px) {
-    .input{
-        width:350px;
-    }
-    .label_parrent {
-        width: calc(350px - 66px);
-    }
+@media (max-width: 992px) {
+  .input {
+    width: 350px;
+  }
+  .label_parrent {
+    width: calc(350px - 66px);
+  }
 }
-@media (max-width:450px) {
-    .input{
-        width:250px;   
-    }
-    .label_parrent {
-        width: calc(250px - 66px);
-    }
+@media (max-width: 450px) {
+  .input {
+    width: 250px;
+  }
+  .label_parrent {
+    width: calc(250px - 66px);
+  }
 }
-
-@media (max-width:1000px) and (min-width:768px) {
-    .text{
-        font-size: 28px;
-    }
-    .sub_text{
-        font-size: 16px;
-    }
+@media (max-width: 768px) {
+  .text_bar {
+    border-radius: 16px 16px 0px 0px;
+    -webkit-border-radius: 16px 16px 0px 0px;
+    -moz-border-radius: 16px 16px 0px 0px;
+    -ms-border-radius: 16px 16px 0px 0px;
+    -o-border-radius: 16px 16px 0px 0px;
+  }
+  .login_form {
+    border-radius: 0px 0px 16px 16px;
+    -webkit-border-radius: 0px 0px 16px 16px;
+    -moz-border-radius: 0px 0px 16px 16px;
+    -ms-border-radius: 0px 0px 16px 16px;
+    -o-border-radius: 0px 0px 16px 16px;
+  }
 }
-@media (max-width:538px) {
-    .text{
-        font-size: 24px;
-    }
-    .sub_text{
-        font-size: 14px;
-    }
+@media (max-width: 1000px) and (min-width: 768px) {
+  .text {
+    font-size: 28px;
+  }
+  .sub_text {
+    font-size: 16px;
+  }
 }
-@media (max-width:398px) {
-    .text{
-        font-size: 20px;
-        width:100%;
-    }
-    .sub_text{
-        font-size: 14px;
-        width:100%;
-    }
+@media (max-width: 538px) {
+  .text {
+    font-size: 24px;
+  }
+  .sub_text {
+    font-size: 14px;
+  }
+  .login_container{
+    padding: 10px;
+  }
+}
+@media (max-width: 398px) {
+  .text {
+    font-size: 20px;
+    width: 100%;
+  }
+  .sub_text {
+    font-size: 14px;
+    width: 100%;
+  }
 }

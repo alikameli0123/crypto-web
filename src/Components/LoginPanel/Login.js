@@ -27,7 +27,7 @@ const Login = () => {
             <div className={`row`}>
                 {/* Text right Bar */}
                 <div className={`col-12 col-md-6 ${style.text_bar}`}>
-                    <h1 className={style.text}>Torbo-crypto digital currency exchange</h1>
+                    <h1 className={style.text}>RealCoin digital currency exchange</h1>
                     <h5 className={style.sub_text}>
                         Safe buying and selling of Bitcoin and digital currencies Join the largest digital currency market
                     </h5>
@@ -37,9 +37,10 @@ const Login = () => {
                 </div>
                 {/* Login Form  */}
                 <div className={`col-12 col-md-6 ${style.login_form}`}>
-                    <div className={style.logo}>
-                        <Image src='/assets/logo.svg' width={36} height={32} alt='logo' />
-                    </div>
+                    <Link className={style.logo} href="/">
+                        <h1>R</h1>
+                        {/* <Image src='/assets/logo.svg' width={36} height={32} alt='logo' /> */}
+                    </Link>
                     <div className={style.form_title}>
                         <h1>Login</h1>
                     </div>
