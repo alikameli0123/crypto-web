@@ -24,7 +24,7 @@ const BarChart = () => {
 
     return (
         <div className={style.BarChart_Container}>
-            <p>ارزش معاملات هفته گذشته</p>
+            <p>Market Cap 7d</p>
             <canvas id='BarChart' className="col-2"></canvas>
 
         </div>

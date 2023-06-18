@@ -34,14 +34,11 @@ const FavoriteCoin = ({ favoriteCoin }) => {
     return (
         <div className={style.container}>
             <div className={`d-flex justify-content-between`}>
-                <select className={style.select_duration}>
-                    <option>هفته</option>
-                </select>
-                <p className={style.title}>محبوب‌ترین کوین‌ها</p>
+                <p className={style.title}>Favorite Coins</p>
             </div>
             <div className={`d-flex justify-content-between ${style.coin_header_detail}`}>
-                <p className={style.title}>24 ساعت گذشته</p>
-                <p className={style.title}>نام</p>
+                <p className={style.title}>24 h</p>
+                <p className={style.title}>Name</p>
             </div>
             <div className={style.coin_list}>
                 {

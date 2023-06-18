@@ -20,7 +20,7 @@
 
 .wallet_detail {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .wallet_detail>ul {

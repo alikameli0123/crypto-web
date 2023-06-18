@@ -19,15 +19,16 @@ const Sidebar = () => {
 
         </Navbar.Brand>
         <div className={style.sidebar_logo}>
-          <Image
+          {/* <Image
             className=""
             alt="crypto logo"
             src='/assets/logo.svg'
             width={26}
             height={22}
-          />
+          /> */}
+          R
         </div>
-        <p className={style.company_name}>نیوکوین اسپیس</p>
+        <p className={style.company_name}>RealCoin</p>
         <Navbar.Toggle aria-controls="GG-Header" />
         <Navbar.Collapse id="GG-Header" className={style.navbar_collapse}>
           <Nav className={style.sidebar_items} variant="pills"
@@ -40,7 +41,7 @@ const Sidebar = () => {
                   <Nav.Link
                   as={Link}
                     eventKey={`/dashboard/${route.path}`}
-                    href={`/dashboard/${route.path}`}
+                    href={route.name === 'logout' ? `/` : `/dashboard/${route.path}`}
                     className={style.nav_link}
                   >
                     <span className={style.sidebar_item}>{route.name}</span>
