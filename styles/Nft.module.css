@@ -1,0 +1,33 @@
+.nftDetail,.row{
+    min-height:100vh;
+    height: 100%;
+}
+.sidebar{
+    border-right: 1px solid rgb(210, 210, 210);
+}
+.native_currency{
+    background-color: gray;
+}
+.link{
+    background-color: rgb(215, 171, 250);
+    text-decoration: none;
+}
+.link:hover{
+    background-color: rgb(174, 76, 255);
+    color:white;
+}
+.nft_card{
+    padding:6px 20px;
+    border-radius: 15px;
+    background-color: #edf2f8;
+    margin-right:20px !important;
+}
+
+.description{
+    text-align:justify;
+}
+@media (max-width:768px){
+    .sidebar{
+        border-right: 0;
+    } 
+}

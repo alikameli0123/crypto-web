@@ -1,0 +1,22 @@
+.nft_container {
+  background: rgb(244, 243, 243);
+  border-radius: 14px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+}
+
+.swiper>div{
+  align-items: center;
+}
+.nft_card{
+  background:white;
+  color: black;
+  text-decoration: none;
+  border-radius:16px;
+  -webkit-border-radius:16px;
+  -moz-border-radius:16px;
+  -ms-border-radius:16px;
+  -o-border-radius:16px;
+}

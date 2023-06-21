@@ -42,6 +42,14 @@ export default class Server {
   }
 
   static async getCoins(){
-    return await this.getCrypto('coins/')
+    return await this.getCrypto('coins/');
+  }
+
+  static async getNfts(){
+    return await this.getCrypto('nfts/list?per_page=100&page=1');
+  }
+
+  static async getNftDetails(asset_platform_id,contract_address){
+    return await this.getCrypto(`nfts/${asset_platform_id}/contract/${contract_address}`)
   }
 }

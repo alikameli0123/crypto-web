@@ -32,3 +32,6 @@
     font-weight:bold;
     display:flex;
 }
+.table_responsive{
+    min-height: calc(100vh - 208px);
+}
