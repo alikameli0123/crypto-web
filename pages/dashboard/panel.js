@@ -24,7 +24,7 @@ const PanelPage = ({ coinsList,favoriteCoin }) => {
 
 export default PanelPage;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   
   const coinsList = await Server.getCoinsList();
   const favoriteCoin = await Server.getFavoriteCoin();

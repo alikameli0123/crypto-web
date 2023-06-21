@@ -13,9 +13,9 @@ import Data from "./../../src/Api/Data";
 import Server from "./../../src/Api/Server";
 import Cookie from "@/src/Api/Cookie"; 
 
-const Map = dynamic(() => import("@/src/Components/Map"), {
-  ssr: false,
-});
+// const Map = dynamic(() => import("@/src/Components/Map"), {
+//   ssr: false,
+// });
 
 const PlaceInformationPage = ({ countries }) => {
   const [country, setCountry] = useState("select country");
@@ -191,14 +191,14 @@ const PlaceInformationPage = ({ countries }) => {
         </p>
       </Register>
       {/* Map */}
-      <Modal show={showModal} onHide={handleClose}>
+      {/* <Modal show={showModal} onHide={handleClose}>
         <Modal.Header>
           <Modal.Title>Location:</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Map lat={lat} long={long} />
         </Modal.Body>
-      </Modal>
+      </Modal> */}
       {/* Map */}
     </>
   );
